@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using TeamOverCinema.Models;
 
 namespace TeamOverCinema.Data
 {
@@ -9,5 +10,6 @@ namespace TeamOverCinema.Data
             : base(options)
         {
         }
+        public DbSet<TeamOverCinema.Models.Users>? Users { get; set; }
     }
 }
