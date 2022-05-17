@@ -23,7 +23,7 @@ namespace TeamOverCinema.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Admin()
         {
             return View();
         }
@@ -53,6 +53,10 @@ namespace TeamOverCinema.Controllers
             return View();
         }
         public IActionResult AdminBookings()
+        {
+            return View();
+        }
+        public IActionResult PrivateCinemaB()
         {
             return View();
         }
