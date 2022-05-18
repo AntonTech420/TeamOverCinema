@@ -2,7 +2,7 @@
 
 namespace TeamOverCinema.Models
 {
-    public class Users
+	public class Users
 	{
 		[Key]
 		public int ID { get; set; }
