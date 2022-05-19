@@ -23,6 +23,26 @@ a {
     background-color: #1b6ec2;
     border-color: #1861ac;
 }
+.colors {
+    background-color: #5459F3;
+    border: none;
+    color: black;
+    padding: 30px 30px;
+    text-align: center;
+    transition: 0.5s;
+    border-radius: 20px;
+    
+}
+.CentreButton {
+    padding-top: 50px;
+    text-align:center;
+}
+
+.CentreButton2 {
+    padding-top: 200px;
+    text-align: center;
+}
+
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -40,7 +60,12 @@ html {
     background-color: #262626 !important;
     color: #FFFFFF;
 }
-
+.button2 {
+    color: white;
+    background-color: #5459F3;
+    width: 50px;
+    height: 25px;
+}
 .border-top {
     border-top: 1px solid #e5e5e5;
 }
