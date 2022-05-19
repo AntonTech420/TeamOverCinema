@@ -12,8 +12,8 @@ using TeamOverCinema.Data;
 namespace TeamOverCinema.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220517125708_UsersDB")]
-    partial class UsersDB
+    [Migration("20220518222054_MainDB")]
+    partial class MainDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -224,6 +224,53 @@ namespace TeamOverCinema.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("TeamOverCinema.Models.Events", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<string>("EventCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EventDuration")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EventInfo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EventName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Events");
+                });
+
+            modelBuilder.Entity("TeamOverCinema.Models.Movies", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<string>("MovieImg")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MovieName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReleaseDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Movies");
                 });
 
             modelBuilder.Entity("TeamOverCinema.Models.Users", b =>

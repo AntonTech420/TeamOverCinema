@@ -1,0 +1,54 @@
+﻿@model IEnumerable<TeamOverCinema.Models.Events>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr class = "text-light">
+            <th>
+                @Html.DisplayNameFor(model => model.EventName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventDuration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventCode)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr class = "text-light">
+            <td>
+                @Html.DisplayFor(modelItem => item.EventName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventDuration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventCode)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
