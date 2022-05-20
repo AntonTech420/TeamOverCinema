@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Movie</h1>
+<h1>Movies</h1>
 
 
 <head>
@@ -32,7 +32,7 @@ div.desc {
   text-align: center;
 }
 div.SubHeadingComingSoon {
-margin-top: 400px;
+
 }
 div.ComingSoon {
   margin: 2px;
@@ -64,6 +64,11 @@ td{
 }
 .line{
     color: white;
+}
+
+.CentreButton2{
+    padding-top: 200px;
+    text-align: center;
 }
 </style>
 </head>
@@ -107,9 +112,15 @@ td{
   <div class="desc">Everything Everywhere All At Once - New Release</div>
 </div>
 <div class="move">
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
+    <button class= "colors2">
+        <a class="button2" 
+    <p>
+    <a asp-action="Create" class="textcolour">Add Movie</a>
+    </p>
+            </a>
+    </button>
+
 
 </div>
 <table class="table">
@@ -176,19 +187,21 @@ td{
 </div>
 <br>
 <br>
+<hr>
 <br>
 <br>
 <br>
 <br>
-
+<br>
+<br>
 
 <div class="CentreButton2">
 
     <button class= "colors">
-        <a class="button2" href='https://localhost:44312/Home/AdminSeatSelection' alt='Broken Link'>Seat Selection Page</a>
+        <a class="button2" href='https://localhost:44312/Events' alt='Broken Link'>Event Selection</a>
     </button>
     <button class= "colors">
-        <a class="button2" href='https://localhost:44312/Home/AdminBookings' alt='Broken Link'>Seat Selection Page</a>
+        <a class="button2" href='https://localhost:44312/Home/AdminBookings' alt='Broken Link'>Admin Seat Page</a>
     </button>
 </div>
 
