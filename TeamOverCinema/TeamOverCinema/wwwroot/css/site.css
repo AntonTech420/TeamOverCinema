@@ -160,7 +160,6 @@ body {
 
 .container {
     perspective: 1000px;
-    margin-bottom: 30px;
 }
 
 .centre {
@@ -201,6 +200,10 @@ body {
 .showcase .seat:not(.occupied):hover {
     cursor: default;
     transform: scale(1);
+}
+
+.test{
+    float:right;
 }
 
 .showcase {
