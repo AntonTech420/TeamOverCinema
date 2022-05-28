@@ -23,6 +23,45 @@ a {
     background-color: #1b6ec2;
     border-color: #1861ac;
 }
+.colors {
+    background-color: #5459F3;
+    border: none;
+    color: black;
+    padding: 30px 30px;
+    text-align: center;
+    transition: 0.5s;
+    border-radius: 20px;
+    
+}
+
+.colors2 {
+    background-color: #5459F3;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    transition: 1s;
+    border-radius: 20px;
+}
+.CentreButton {
+    padding-top: 50px;
+    text-align:center;
+}
+.textcolour
+{
+    color:white;
+
+}
+
+.CentreButton2 {
+    padding-top: 200px;
+    text-align: center;
+}
+
+.logo{
+    padding-top:0px;
+}
+
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -40,7 +79,16 @@ html {
     background-color: #262626 !important;
     color: #FFFFFF;
 }
+.button2 {
+    color: white;
+    background-color: #5459F3;
+    width: 50px;
+    height: 25px;
+}
 
+.button3 {
+    background-color: #262626;
+}
 .border-top {
     border-top: 1px solid #e5e5e5;
 }
@@ -112,7 +160,6 @@ body {
 
 .container {
     perspective: 1000px;
-    margin-bottom: 30px;
 }
 
 .centre {
@@ -153,6 +200,10 @@ body {
 .showcase .seat:not(.occupied):hover {
     cursor: default;
     transform: scale(1);
+}
+
+.test{
+    float:right;
 }
 
 .showcase {
@@ -196,3 +247,14 @@ p.text {
     p.text span {
         color: #6feaf6;
     }
+
+.test
+{
+padding-left:200px;
+margin-left: 300px;
+text-align:center;
+margin-top: 100px;
+}
+
+/*All CSS sections for Promo Page */
+

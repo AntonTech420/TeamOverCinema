@@ -11,5 +11,7 @@ namespace TeamOverCinema.Data
         {
         }
         public DbSet<TeamOverCinema.Models.Users>? Users { get; set; }
+        public DbSet<TeamOverCinema.Models.Events>? Events { get; set; }
+        public DbSet<TeamOverCinema.Models.Movies>? Movies { get; set; }
     }
 }
