@@ -36,7 +36,7 @@ namespace TeamOverCinema.Controllers
         {
             return View();
         }
-        public IActionResult FoodandDrink()
+        public IActionResult FoodnDrink()
         {
             return View();
         }
