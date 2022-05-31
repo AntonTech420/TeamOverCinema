@@ -12,7 +12,7 @@ using TeamOverCinema.Data;
 namespace TeamOverCinema.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220518222054_MainDB")]
+    [Migration("20220531000619_MainDB")]
     partial class MainDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -259,6 +259,9 @@ namespace TeamOverCinema.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
+                    b.Property<bool>("ComingSoon")
+                        .HasColumnType("bit");
+
                     b.Property<string>("MovieImg")
                         .HasColumnType("nvarchar(max)");
 
@@ -290,7 +293,7 @@ namespace TeamOverCinema.Data.Migrations
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Phone")
+                    b.Property<int?>("Phone")
                         .HasColumnType("int");
 
                     b.Property<string>("UName")

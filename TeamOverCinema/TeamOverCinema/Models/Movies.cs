@@ -9,5 +9,6 @@ namespace TeamOverCinema.Models
 		public string? MovieImg { get; set; }
 		public string? MovieName { get; set; }
 		public string? ReleaseDate { get; set; }
+		public bool ComingSoon { get; set; } 
 	}
 }

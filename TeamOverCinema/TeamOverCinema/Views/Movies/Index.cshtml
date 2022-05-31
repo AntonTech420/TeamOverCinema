@@ -112,17 +112,53 @@ td{
 </p>
 
 </div>
+<div class="SubHeadingComingSoon">
+        <h3>Movies: </h3>
+
+</div>
 <table class="table">
-    <tbody>
-    <thead>
+        <tbody>
+        <thead>
         <tr class = "text-light">
         </tr>
     </thead>
         <tr class = "NowShowing text-light">
             <th></th>
-                <hr class = "line">
+               <hr class = "line">
             @foreach (var item in Model) {
-            <div class = "NowShowing">
+                    if (@item.ComingSoon == false)
+                    {
+                        <div class = "NowShowing">
+                <img src="@Html.DisplayFor(modelitem => item.MovieImg)" width="200" height="300">
+                <br>@Html.DisplayFor(modelItem => item.MovieName)
+                <br>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                        </div>
+                    }
+                }
+            </tr>
+       </tbody>
+</table>
+
+    <div class="SubHeadingComingSoon">
+        <h3>Coming Soon: </h3>
+
+</div>
+<table class="table">
+        <tbody>
+        <thead>
+        <tr class = "text-light">
+        </tr>
+    </thead>
+        <tr class = "NowShowing text-light">
+            <th></th>
+               <hr class = "line">
+            @foreach (var item in Model) {
+                    if (@item.ComingSoon == true)
+                    {
+                        <div class = "NowShowing">
                 <img src="@Html.DisplayFor(modelitem => item.MovieImg)" width="200" height="300">
                 <br>@Html.DisplayFor(modelItem => item.MovieName)
                 <br>@Html.DisplayFor(modelItem => item.ReleaseDate)
@@ -130,50 +166,32 @@ td{
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </div>
-            }
-        </tr>
-
-    </tbody>
+                        </div>
+                    }
+                }
+            </tr>
+       </tbody>
 </table>
 
-<div class="SubHeadingComingSoon">
-        <h3>Coming Soon: </h3>
-</div>
-<div class="ComingSoon">
-  <img src="https://m.media-amazon.com/images/M/MV5BMmIwZDMyYWUtNTU0ZS00ODJhLTg2ZmEtMTk5ZmYzODcxODYxXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg" alt="Top Gun: Maverick" width="600" height="400">
-  <div class="desc">Top Gun: Maverick - Coming Soon</div>
-</div>
 
-<div class="ComingSoon">
-  <img src="https://www.monsterfest.com.au/monsterfest/wp-content/uploads/2022/02/JW3_INT_DIGITAL1SHEET_ARCADIA_BLOCK_TT_AUS.jpg" alt="Jurassic World: Dominion" width="600" height="400">
-  <div class="desc">Jurassic World: Dominion - Coming Soon</div>
-</div>
 
-<div class="ComingSoon">
-  <img src="https://lumiere-a.akamaihd.net/v1/images/p_lightyear_v3_22043_36db91d2.jpeg" alt="Lighjtyear" width="600" height="400">
-  <div class="desc">Lightyear - New Release</div>
-</div>
-
-<div class="ComingSoon">
-  <img src="https://i.etsystatic.com/15810408/r/il/388ec6/2239141293/il_fullxfull.2239141293_bxt1.jpg" alt="Minions: The Rise of Gru" width="600" height="400">
-  <div class="desc">Minions: The Rise of Gru - Coming Soon</div>
-</div>
-
-<div class="ComingSoon">
-  <img src="https://pbs.twimg.com/media/FQzsdTBVkAERLwI?format=jpg&name=medium" alt="Thor: Love and Thunder" width="600" height="400">
-  <div class="desc">Thor: Love and Thunder - Coming Soon</div>
-</div>
-
-<div class="ComingSoon">
-  <img src="https://omg.blog/wp-content/uploads/2022/03/NopePoster.jpg" alt="Nope" width="600" height="400">
-  <div class="desc">Nope - Coming Soon</div>
-</div>
-
+<<<<<<< Updated upstream
 <div class="ComingSoon">
   <img src="https://media-cache.cinematerial.com/p/500x/3ndccksg/where-the-crawdads-sing-australian-movie-poster.jpg?v=1647962467" alt="Where The Crawdads Sing" width="600" height="400">
   <div class="desc">Where The Crawdads Sing - Coming Soon</div>
 </div>
+=======
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="CentreButton2">
+>>>>>>> Stashed changes
 
 <div class="Button">
     <button>

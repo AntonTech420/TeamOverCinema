@@ -10,8 +10,12 @@ namespace TeamOverCinema.Models
 		public string? Password { get; set; }
 		[EmailAddress]
 		public string? Email { get; set; }
+<<<<<<< Updated upstream
 		[Phone]
 		public int Phone { get; set; }
+=======
+		public int? Phone { get; set; }
+>>>>>>> Stashed changes
 		public bool Admin { get; set; }
 	}
 }

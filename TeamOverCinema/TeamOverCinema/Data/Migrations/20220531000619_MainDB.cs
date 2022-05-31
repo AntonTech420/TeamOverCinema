@@ -32,7 +32,8 @@ namespace TeamOverCinema.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     MovieImg = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MovieName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ReleaseDate = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    ReleaseDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ComingSoon = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -48,7 +49,7 @@ namespace TeamOverCinema.Data.Migrations
                     UName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Phone = table.Column<int>(type: "int", nullable: false),
+                    Phone = table.Column<int>(type: "int", nullable: true),
                     Admin = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>

@@ -257,6 +257,9 @@ namespace TeamOverCinema.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
+                    b.Property<bool>("ComingSoon")
+                        .HasColumnType("bit");
+
                     b.Property<string>("MovieImg")
                         .HasColumnType("nvarchar(max)");
 
@@ -288,7 +291,7 @@ namespace TeamOverCinema.Data.Migrations
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Phone")
+                    b.Property<int?>("Phone")
                         .HasColumnType("int");
 
                     b.Property<string>("UName")
