@@ -32,7 +32,8 @@ namespace TeamOverCinema.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     MovieImg = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MovieName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ReleaseDate = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    ReleaseDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ComingSoon = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
