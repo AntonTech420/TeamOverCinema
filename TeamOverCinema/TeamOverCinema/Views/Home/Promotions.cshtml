@@ -1,5 +1,8 @@
-﻿@{
+﻿@model IEnumerable<TeamOverCinema.Models.Events>
+
+@{
     ViewData["Title"] = "Promotions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <head>
@@ -38,7 +41,6 @@
 
 
 
-
 <div class="text-center">
     <h1 class="display-4">Oversight Promotions</h1>
     <div class="card">
@@ -63,21 +65,26 @@
             <h2 style="text-align: center;">List of deals</h2>
             <div class="row">
               <div class="column left">
-                  <P style="text-align: center; font-size: 20px"><b>Current events avaliable</b></P>
-                <P style="text-align: center;">Here the events section from admin will be added showing what admin has put</P>
-                <P style="text-align: center;">Here the events section from admin will be added showing what admin has put</P>
-                <P style="text-align: center;">Here the events section from admin will be added showing what admin has put</P>
-                <P style="text-align: center;">Here the events section from admin will be added showing what admin has put</P>
-              </div>
-              <div class="column middle">
-                <P style="text-align: center; font-size: 20px"><b>Current Deals avaliable</b></P>
-                <P style="text-align: center;">Watch <b>2</b> movies at oversight cinema and get <b>75%</b> off you next movie purchase and <b>10%</b> off your food&drinks</P>
-                <P style="text-align: center;">Watch <b>2</b> movies at oversight cinema and get <b>75%</b> off you next movie purchase and <b>10%</b> off your food&drinks</P>
-                <P style="text-align: center;">Watch <b>2</b> movies at oversight cinema and get <b>75%</b> off you next movie purchase and <b>10%</b> off your food&drinks</P>
-                <P style="text-align: center;">Watch <b>2</b> movies at oversight cinema and get <b>75%</b> off you next movie purchase and <b>10%</b> off your food&drinks</P>
-                <P style="text-align: center;">Watch <b>2</b> movies at oversight cinema and get <b>75%</b> off you next movie purchase and <b>10%</b> off your food&drinks</P>
-                <P style="text-align: center;">Watch <b>2</b> movies at oversight cinema and get <b>75%</b> off you next movie purchase and <b>10%</b> off your food&drinks</P>
-                <P style="text-align: center;">Watch <b>2</b> movies at oversight cinema and get <b>75%</b> off you next movie purchase and <b>10%</b> off your food&drinks</P>
+<table class="table">
+    <tbody>
+@foreach (var item in Model) {
+        <tr class = "text-light">
+            <td>
+                @Html.DisplayFor(modelItem => item.EventName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventDuration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventCode)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
               </div>
               <div class="column right">
                   <P style="text-align: center; font-size: 20px"><b>Public event holidays will not change</b></P>
