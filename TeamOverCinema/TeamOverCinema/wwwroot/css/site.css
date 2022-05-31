@@ -166,6 +166,11 @@ body {
     text-align: center;
     padding-left: 42%;
 }
+.centre2 {
+    text-align: center;
+    padding-top: 80px;
+    padding-left: 3%;
+}
 
 .seat {
     background-color: #444451;
