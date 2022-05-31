@@ -1,8 +1,217 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    
+<head>
+<style>
+div.NowShowing {
+  margin: 2px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.NowShowing:hover {
+  border: 1px solid #777;
+}
+
+div.NowShowing img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 1px;
+  text-align: center;
+}
+div.SubHeadingComingSoon {
+margin-top: 400px;
+}
+div.ComingSoon {
+  margin: 2px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.ComingSoon:hover {
+  border: 1px solid #777;
+}
+
+div.ComingSoon img {
+  width: 100%;
+  height: auto;
+}
+div.Button {
+    margin-top: 400px;
+    padding: 20px;
+}
+.column {
+    float: left;
+    padding: 5px;
+}
+
+.middle {
+    width: 32%;
+}
+
+.middle2 {
+    width: 50%;
+}
+
+.left2, .right2
+{
+    width: 25%;
+}
+
+.left, .right { /* sets rows on left and right at 28% so they are contained at tht side within the div */
+    width: 33%;
+}
+/* Adds style to the card div holing texts and other stuff */
+.card {
+    background-color: #282f4d;
+    padding: 20px;
+    margin-top: 20px;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.move{
+    padding-top: 25px;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+
+    <img src="~/lib/Images/OhomePage.png" class="center" width="400" height="400">
+    <h1 style="text-align: center;">Welcome to Oversight Cinemas</h1>
+    <br>
+    <br>
+<h4 style="text-align: center;">Here are some movies we are currently showing: </h4>
+
+
+<div class="NowShowing">
+  <a href="https://localhost:44312/Home/AdminSeatSelection"><img src="https://www.vitalthrills.com/wp-content/uploads/2021/10/batmanposter2.jpg" alt="The Batman" width="600" height="400"></a>
+  <div class="desc">The Batman - New Release</div>
 </div>
+
+<div class="NowShowing">
+  <a href="https://localhost:44312/Home/AdminSeatSelection"><img src="https://assets-prd.ignimgs.com/2022/01/13/uncharted-poster-full-1642086040683.jpg" alt="Uncharter" width="600" height="400"></a>
+  <div class="desc">Uncharted - New Release</div>
+</div>
+
+<div class="NowShowing">
+  <a href="https://localhost:44312/Home/AdminSeatSelection"><img src="https://m.media-amazon.com/images/M/MV5BNWM0ZGJlMzMtZmYwMi00NzI3LTgzMzMtNjMzNjliNDRmZmFlXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UX1000_.jpg" alt="Doctor Strange Multiver of Madness" width="600" height="400"></a>
+  <div class="desc">Doctor Strange Multiverse of Madness - New Release</div>
+</div>
+
+<div class="NowShowing">
+  <a href="https://localhost:44312/Home/AdminSeatSelection"><img src="https://m.media-amazon.com/images/I/71sjqX5JayL._AC_SL1200_.jpg" alt="Sonic the Hedgehog 2" width="600" height="400"></a>
+  <div class="desc">Sonic the Hedgehog 2 - New Release</div>
+</div>
+
+<div class="NowShowing">
+  <a href="https://localhost:44312/Home/AdminSeatSelection"><img src="https://m.media-amazon.com/images/M/MV5BZGQ1NjQyNDMtNzFlZS00ZGIzLTliMWUtNGJkMGMzNTBjNDg0XkEyXkFqcGdeQXVyMTE1NDI5MDQx._V1_.jpg" alt="Fantastic Beasts 3" width="600" height="400"></a>
+  <div class="desc">Fantastic Beasts: The Secrets of Dumbledore - New Release</div>
+</div>
+
+<div class="NowShowing">
+  <a href="https://localhost:44312/Home/AdminSeatSelection"><img src="https://m.media-amazon.com/images/M/MV5BMDhkYmU0MzctMWEzNy00ODg1LWI3ZjAtMGZlZjkzNWVmMzVjXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UX1000_.jpg" alt="The Bad Guys" width="600" height="400"></a>
+  <div class="desc">The Bad Guys - New Release</div>
+</div>
+
+<div class="NowShowing">
+  <a href="https://localhost:44312/Home/AdminSeatSelection"><img src="https://m.media-amazon.com/images/M/MV5BYTdiOTIyZTQtNmQ1OS00NjZlLWIyMTgtYzk5Y2M3ZDVmMDk1XkEyXkFqcGdeQXVyMTAzMDg4NzU0._V1_FMjpg_UX1000_.jpg" alt="Everything Everywhere All At Once" width="600" height="400"></a>
+  <div class="desc">Everything Everywhere All At Once - New Release</div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="text">
+    <h4 class="display-4" style="text-align: center;">Highlighted promotion</h4>
+    <div class="card">
+            <h2 style="text-align: center;">Most Popular Promotions</h2>
+            <h5 style="text-align: center;">Our club cinema mash up for 12hrs of movies and music!</h5>
+            <div class="row">
+              <div class="column left2">
+              </div>
+              <img src="https://www.betterteam.com/images/club-promoter-job-description-5946x3964-20201119.jpeg?crop=1:1,smart&width=1200&dpr=2" alt="Pappagio" style= "height:100%;width:50%;">
+                <P style="text-align: center;">This event includes a full day from <b>12pm-12am</b> to overload the senses! Event will be held every <b>Friday for 2022</b> and will include <b>6hrs</b> of movie marthons and hottest movies of the day followed by <b>THE PARTY OF A LIFETIME!</b> with live DJ's and<b> 5 free drinks</b>and a variety of food and drinks to choose from. Ticket sell out quick so book now for <b>$249.99</b></P>
+                <P style="text-align: center;"><b>Click here to book!</b></P>
+              </div>
+              <div class="column right2">
+                
+              </div>
+            </div>
+          </div>
+<div class="move">
+    <button class= "colors2">
+        <a class="button2" 
+    <p>
+    <a class="textcolour" href='https://localhost:44312/Home/Promotions'>Full Promotions list</a>
+    </p>
+            </a>
+    </button>
+</div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h4 style="text-align: center;">Take a look at some of the food and drinks we have to offer: </h4>
+
+<div class="row d-flex justify-content-center">
+        <div class="col-6 d-flex align-items-center justify-content-center">
+    <img src= "https://i0.wp.com/www.onceuponachef.com/images/2015/06/Crazy-Good-Spicy-Italian-Popcorn.jpg?resize=760%2C505&ssl=1" style= "height:100%;width:50%;">
+    </div>
+<div class="col-6">
+    <h2>Popcorn</h2>
+    <h3>Small Popcorn $12.50</h3>
+
+
+    <h3>Medium Popcorn $15.50</h3>
+
+
+    <h3>Large Popcorn $20.00</h3>
+
+</div>
+</div>
+
+<br>
+<br>
+
+<div class="move">
+    <button class= "colors2">
+        <a class="button2" 
+    <p>
+    <a class="textcolour" href='https://localhost:44312/Home/FoodandDrink'>Full food and drinks menu</a>
+    </p>
+            </a>
+    </button>
+</div>
+<br>
+<br>
+<br>
+</body>
