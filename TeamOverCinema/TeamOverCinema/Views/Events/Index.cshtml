@@ -5,14 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Events Page</h1>
+<h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
-        <tr class = "text-light">
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.EventName)
             </th>
@@ -30,7 +30,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr class = "text-light">
+        <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.EventName)
             </td>
@@ -45,16 +45,10 @@
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">EventDetails</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
-<br><br><br>
-<div class="CentreButton">
-<button class= "colors">
-        <a class="button2" href='https://localhost:44312/Movies' alt='Broken Link'>Admin Page</a>
-    </button>
-    </div>
