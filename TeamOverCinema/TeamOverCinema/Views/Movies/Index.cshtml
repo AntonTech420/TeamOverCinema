@@ -10,6 +10,21 @@
 
 <head>
 <style>
+.CentreButton {
+    padding-top: 50px;
+    text-align:center;
+}
+.textcolour
+{
+    color:white;
+
+}
+
+.CentreButton2 {
+    padding-top: 50px;
+    text-align: center;
+}
+
 div.NowShowing {
   margin: 2px;
   border: 1px solid #ccc;
@@ -65,6 +80,18 @@ td{
 .line{
     color: white;
 }
+.button2 {
+    color: white;
+    width: 50px;
+    height: 25px;
+    background-color: #5459F3;
+    border: none;
+    padding: 30px 30px;
+    text-align: center;
+    transition: 1s;
+    border-radius: 20px;
+}
+
 </style>
 </head>
 <body>
@@ -73,9 +100,11 @@ td{
 
 
 <div class="move">
-<p>
+<div class="CentreButton">
+<button class= "colors">
     <a asp-action="Create">Create New</a>
-</p>
+    </button>
+
 
 </div>
 
@@ -136,17 +165,15 @@ td{
        </tbody>
 </table>
 
-
-<div class="CentreButton2">
-
-<div class="Button">
-    <button>
-        <a href='https://localhost:44312/Home/AdminSeatSelection' alt='Broken Link'>Seat Selection Page</a>
+<div class="CentreButton">
+<button class= "colors">
+        <a class="button2" href='https://localhost:44312/Events' alt='Broken Link'>Events</a>
     </button>
-    <button>
-        <a href='https://localhost:44312/Home/AdminBookings' alt='Broken Link'>Seat Selection Page</a>
+   
+<button class= "colors">
+        <a class="button2" href='https://localhost:44312/Home/AdminBookings' alt='Broken Link'>Private Bookings</a>
     </button>
-</div>
-</div>
+    </div>
+    </div>
 
 </body>
