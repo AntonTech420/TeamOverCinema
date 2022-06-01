@@ -33,12 +33,14 @@ a {
     border-radius: 20px;
     
 }
-
+.sidebyside {
+    margin: 0 auto;
+}
 .colors2 {
     background-color: #5459F3;
     border: none;
     color: white;
-    padding: 10px 10px;
+    padding: 30px 30px;
     text-align: center;
     transition: 1s;
     border-radius: 20px;
@@ -46,6 +48,7 @@ a {
 .CentreButton {
     padding-top: 50px;
     text-align:center;
+    margin: 0 auto;
 }
 .textcolour
 {
@@ -54,7 +57,7 @@ a {
 }
 
 .CentreButton2 {
-    padding-top: 200px;
+    padding-top: 50px;
     text-align: center;
 }
 
@@ -85,7 +88,10 @@ html {
     width: 50px;
     height: 25px;
 }
-
+.test3 {
+    padding-left: 200px; 
+    font-size: 54px;
+}
 .button3 {
     background-color: #262626;
 }
