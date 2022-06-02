@@ -33,6 +33,16 @@ a {
     border-radius: 20px;
     
 }
+/*register button color3*/
+.colors3 {
+    background-color: #5459F3;
+    border: none;
+    color: black;
+    padding: 20px 30px;
+    text-align: center;
+    transition: 0.5s;
+    border-radius: 20px;
+}
 .sidebyside {
     margin: 0 auto;
 }
