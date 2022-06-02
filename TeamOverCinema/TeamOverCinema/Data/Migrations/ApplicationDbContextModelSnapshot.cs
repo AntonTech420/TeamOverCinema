@@ -297,6 +297,9 @@ namespace TeamOverCinema.Data.Migrations
                     b.Property<string>("UName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("User")
+                        .HasColumnType("bit");
+
                     b.HasKey("ID");
 
                     b.ToTable("Users");

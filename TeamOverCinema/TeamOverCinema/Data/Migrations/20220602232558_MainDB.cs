@@ -50,7 +50,8 @@ namespace TeamOverCinema.Data.Migrations
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Phone = table.Column<int>(type: "int", nullable: false),
-                    Admin = table.Column<bool>(type: "bit", nullable: false)
+                    Admin = table.Column<bool>(type: "bit", nullable: false),
+                    User = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {

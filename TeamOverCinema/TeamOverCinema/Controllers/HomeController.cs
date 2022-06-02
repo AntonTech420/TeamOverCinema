@@ -49,10 +49,6 @@ namespace TeamOverCinema.Controllers
         {
             return View();
         }
-        public IActionResult Register()
-        {
-            return View();
-        }
         public IActionResult Gifts()
         {
             return View();
@@ -111,6 +107,31 @@ namespace TeamOverCinema.Controllers
             }
 
             return View(movies);
+        }
+        // GET: Users
+        public async Task<IActionResult> Register()
+        {
+            return _context.Users != null ?
+                        View(await _context.Users.ToListAsync()) :
+                        Problem("Entity set 'ApplicationDbContext.Users'  is null.");
+        }
+
+        // GET: Users/Details/5
+        public async Task<IActionResult> UserDetails(int? id)
+        {
+            if (id == null || _context.Users == null)
+            {
+                return NotFound();
+            }
+
+            var users = await _context.Users
+                .FirstOrDefaultAsync(m => m.ID == id);
+            if (users == null)
+            {
+                return NotFound();
+            }
+
+            return View(users);
         }
     }
 }

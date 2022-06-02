@@ -12,7 +12,7 @@
 </p>
 <table class="table">
     <thead>
-        <tr class = "text-light">
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.UName)
             </th>
@@ -28,12 +28,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.Admin)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr class = "text-light">
+        <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.UName)
             </td>
@@ -48,6 +51,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Admin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

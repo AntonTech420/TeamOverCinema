@@ -12,5 +12,6 @@ namespace TeamOverCinema.Models
 		public string? Email { get; set; }
 		public int Phone { get; set; }
 		public bool Admin { get; set; }
+		public bool User { get; set; }
 	}
 }
