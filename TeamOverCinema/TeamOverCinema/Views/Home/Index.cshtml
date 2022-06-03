@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<TeamOverCinema.Models.Movies>
+
+@{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -18,22 +20,40 @@ margin-left: -325px;
 padding: 3px;
 margin-top: 0px;
 margin-bottom: -100px;
-border-top: 1px solid white;
+}
+.prefooter {
+position:static;
+left: 0;
+bottom: 0;
+width: 150%;
+background-color: #161B22;
+color: white;
+text-align: center;
+align-content:center;
+margin-left: -325px;
+padding: 3px;
+margin-top: 0px;
+margin-bottom: 0px;
 }
 div.NowShowing {
   margin: 2px;
-  border: 1px solid #ccc;
   float: left;
   width: 180px;
+  border: 1px solid #242333;
 }
 
 div.NowShowing:hover {
   border: 1px solid #777;
+
 }
 
 div.NowShowing img {
   width: 100%;
-  height: auto;
+  height: 265px;
+ 
+}
+.table{
+     margin-bottom: 100px;
 }
 
 div.desc {
@@ -41,7 +61,7 @@ div.desc {
   text-align: center;
 }
 div.SubHeadingComingSoon {
-margin-top: 400px;
+margin-top: 100px;
 }
 div.ComingSoon {
   margin: 2px;
@@ -98,72 +118,135 @@ div.Button {
     padding-top: 25px;
     text-align: center;
 }
+
+.movietextcenter{
+    text-align: center;
+    padding-top: 7px;
+    font-size: 17px;
+    font-weight: bold;
+
+}
+
+.movietextcenter2{
+    text-align: center;
+    padding-top: 5px;
+    font-size: 17px;
+    font-weight: bold;
+    padding-bottom: -5px;
+
+}
+
+slidecenter{
+    text-align: center;
+    margin-left: 00px;
+}
+/*All CSS sections for Slide Show */
+
+
+
 </style>
 </head>
 <body>
 
-    <img src="~/lib/Images/OhomePage.png" class="center" width="400" height="400">
-    <h1 style="text-align: center;">Welcome to Oversight Cinemas</h1>
+<h1 style="text-align: center;">Welcome to Oversight Cinemas</h1>
+
+
+<div class="slideshow-container">
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="~/lib/Images/OhomePage.png" style="width:100%">
+  <div class="text"></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="~/lib/Images/anotherRealAd 1.png" style="width:100%">
+  <div class="text"></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="~/lib/Images/anotherRealAd 2.png" style="width:100%">
+  <div class="text"></div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
     <br>
     <br>
-<h4 style="text-align: center;">Here are some movies we are currently showing: </h4>
+    <br>
+    <br>
+    <br>
+    <br>
+<h2 style="text-align: center;, font-weight: bold;">Here are the movies we are currently showing: </h2>
 
 
-<div class="NowShowing">
-  <a href="https://localhost:44312/Home/AdminSeatSelection"><img src="https://www.vitalthrills.com/wp-content/uploads/2021/10/batmanposter2.jpg" alt="The Batman" width="600" height="400"></a>
-  <div class="desc">The Batman - New Release</div>
+
+<table class="table">
+        <tbody>
+        <thead>
+        <tr class = "text-light">
+        </tr>
+    </thead>
+        <tr class = "NowShowing text-light">
+            <th></th>
+               <hr class = "line">
+            @foreach (var item in Model) {
+                    if (@item.ComingSoon == false)
+                    {
+                        <div class = "NowShowing">
+                            <a href="https://localhost:44312/Home/AdminSeatSelection"><img src="@Html.DisplayFor(modelitem => item.MovieImg)" width="600" height="400"></a>
+                            <br><div class="movietextcenter">@Html.DisplayFor(modelItem => item.MovieName)</div>
+
+                            <br>
+
+                        </div>
+
+                    }
+                }
+                <br>
+            </tr>
+       </tbody>
+</table>
+
+    <div class="SubHeadingComingSoon">
+        <h3>Coming Soon: </h3>
+
 </div>
+<table class="table">
+        <tbody>
+        <thead>
+        <tr class = "text-light">
+        </tr>
+    </thead>
+        <tr class = "NowShowing text-light">
+            <th></th>
+               <hr class = "line">
+            @foreach (var item in Model) {
+                    if (@item.ComingSoon == true)
+                    {
+                        <div class = "NowShowing">
+                <img src="@Html.DisplayFor(modelitem => item.MovieImg)" width="200" height="300">
+                <br><div class="movietextcenter2">@Html.DisplayFor(modelItem => item.MovieName)
+                <br>@Html.DisplayFor(modelItem => item.ReleaseDate)</div>
+                <br>
+                
+                        </div>
+                    }
+                }
+            </tr>
+       </tbody>
+</table>
 
-<div class="NowShowing">
-  <a href="https://localhost:44312/Home/AdminSeatSelection"><img src="https://assets-prd.ignimgs.com/2022/01/13/uncharted-poster-full-1642086040683.jpg" alt="Uncharter" width="600" height="400"></a>
-  <div class="desc">Uncharted - New Release</div>
-</div>
 
-<div class="NowShowing">
-  <a href="https://localhost:44312/Home/AdminSeatSelection"><img src="https://m.media-amazon.com/images/M/MV5BNWM0ZGJlMzMtZmYwMi00NzI3LTgzMzMtNjMzNjliNDRmZmFlXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UX1000_.jpg" alt="Doctor Strange Multiver of Madness" width="600" height="400"></a>
-  <div class="desc">Doctor Strange Multiverse of Madness - New Release</div>
-</div>
-
-<div class="NowShowing">
-  <a href="https://localhost:44312/Home/AdminSeatSelection"><img src="https://m.media-amazon.com/images/I/71sjqX5JayL._AC_SL1200_.jpg" alt="Sonic the Hedgehog 2" width="600" height="400"></a>
-  <div class="desc">Sonic the Hedgehog 2 - New Release</div>
-</div>
-
-<div class="NowShowing">
-  <a href="https://localhost:44312/Home/AdminSeatSelection"><img src="https://m.media-amazon.com/images/M/MV5BZGQ1NjQyNDMtNzFlZS00ZGIzLTliMWUtNGJkMGMzNTBjNDg0XkEyXkFqcGdeQXVyMTE1NDI5MDQx._V1_.jpg" alt="Fantastic Beasts 3" width="600" height="400"></a>
-  <div class="desc">Fantastic Beasts: The Secrets of Dumbledore - New Release</div>
-</div>
-
-<div class="NowShowing">
-  <a href="https://localhost:44312/Home/AdminSeatSelection"><img src="https://m.media-amazon.com/images/M/MV5BMDhkYmU0MzctMWEzNy00ODg1LWI3ZjAtMGZlZjkzNWVmMzVjXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UX1000_.jpg" alt="The Bad Guys" width="600" height="400"></a>
-  <div class="desc">The Bad Guys - New Release</div>
-</div>
-
-<div class="NowShowing">
-  <a href="https://localhost:44312/Home/AdminSeatSelection"><img src="https://m.media-amazon.com/images/M/MV5BYTdiOTIyZTQtNmQ1OS00NjZlLWIyMTgtYzk5Y2M3ZDVmMDk1XkEyXkFqcGdeQXVyMTAzMDg4NzU0._V1_FMjpg_UX1000_.jpg" alt="Everything Everywhere All At Once" width="600" height="400"></a>
-  <div class="desc">Everything Everywhere All At Once - New Release</div>
-</div>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<div class="text">
+<div class="push">
     <h4 class="display-4" style="text-align: center;">Highlighted promotion</h4>
     <div class="card">
             <h2 style="text-align: center;">Most Popular Promotions</h2>
@@ -229,7 +312,41 @@ div.Button {
 <br>
 <br>
 <br>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 4000); // Change image every 2 seconds
+}
+</script>
+
 </body>
+
+<prefooter>
+        <div class="prefooter">
+
+        <p>Our locations: Henderson    Waiheke    Papakura    Albany    Newmarket </p>
+
+         <a class="textcolour" href='https://localhost:44312/Home/AboutUs'>About Us</a> <a class="textcolour" href='https://localhost:44312/Home/Privacy'>Privacy</a> 
+        <br>
+    </div>
+    </prefooter>
+
 <footer>
         <div class="footer">
         <a href="https://www.facebook.com/"> <img border="0" alt="FaceBook" src="https://icon-library.com/images/facebook-icon-png-white/facebook-icon-png-white-20.jpg" width="50" height="50"></a>
@@ -237,3 +354,4 @@ div.Button {
         <a href="https://www.instagram.com/"> <img border="0" alt="Instagram" src="https://www.logolynx.com/images/logolynx/s_30/304dbd9b624d6051585aac35a3677e9c.png" width="50" height="50"></a>
     </div>
     </footer>
+

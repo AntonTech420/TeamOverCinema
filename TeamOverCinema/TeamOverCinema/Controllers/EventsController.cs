@@ -9,7 +9,7 @@ using TeamOverCinema.Data;
 using TeamOverCinema.Models;
 
 namespace TeamOverCinema.Controllers
-{
+{  
     public class EventsController : Controller
     {
         private readonly ApplicationDbContext _context;
