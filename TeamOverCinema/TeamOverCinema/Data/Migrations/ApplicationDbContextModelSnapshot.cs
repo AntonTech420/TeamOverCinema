@@ -286,15 +286,18 @@ namespace TeamOverCinema.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Phone")
                         .HasColumnType("int");
 
                     b.Property<string>("UName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("User")
