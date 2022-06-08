@@ -56,7 +56,7 @@ namespace TeamOverCinema.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,MovieImg,MovieName,ReleaseDate,ComingSoon")] Movies movies)
+        public async Task<IActionResult> Create([Bind("ID,MovieImg,MovieName,ReleaseDate,ComingSoon,Seats,SeatsTaken")] Movies movies)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace TeamOverCinema.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,MovieImg,MovieName,ReleaseDate,ComingSoon")] Movies movies)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,MovieImg,MovieName,ReleaseDate,ComingSoon,Seats,SeatsTaken")] Movies movies)
         {
             if (id != movies.ID)
             {
