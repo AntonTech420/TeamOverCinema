@@ -16,10 +16,6 @@ namespace TeamOverCinema.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
         [Authorize]
         public IActionResult AdminSeatSelection()
         {
@@ -98,8 +94,7 @@ namespace TeamOverCinema.Controllers
             return View(events);
         }
         // GET: Movies
-        [Authorize (Roles = "admin")]
-        public async Task<IActionResult> Admin()
+        public async Task<IActionResult> index()
         {
             return _context.Movies != null ?
                         View(await _context.Movies.ToListAsync()) :

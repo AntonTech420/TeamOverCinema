@@ -12,12 +12,16 @@ a {
     color: #0366d6;
 }
 
-.form-label{
-    color: black;
+.control-label, .form-check-label {
+    color: #0366d6;
 }
 
-label{
-    color: black;
+.form-label {
+    color: #0366d6;
+}
+
+label {
+    color: #0366d6;
 }
 
 .btn-primary {

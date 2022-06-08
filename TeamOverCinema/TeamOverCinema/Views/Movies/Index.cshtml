@@ -5,62 +5,218 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
 
-<p>
+<head>
+<style>
+.footer {
+position:static;
+left: 0;
+bottom: 0;
+width: 150%;
+background-color: #262626;
+color: white;
+text-align: center;
+align-content:center;
+margin-left: -325px;
+padding: 3px;
+margin-top: 0px;
+margin-bottom: -100px;
+}
+.prefooter {
+position:static;
+left: 0;
+bottom: 0;
+width: 150%;
+background-color: #161B22;
+color: white;
+text-align: center;
+align-content:center;
+margin-left: -325px;
+padding: 3px;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+.CentreButton {
+    padding-top: 50px;
+    text-align:center;
+}
+.textcolour
+{
+    color:white;
+
+}
+
+.CentreButton2 {
+    padding-top: 50px;
+    text-align: center;
+}
+
+div.NowShowing {
+  margin: 2px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+  float: left;
+}
+
+div.NowShowing:hover {
+  border: 1px solid #777;
+}
+
+div.NowShowing img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 1px;
+  text-align: center;
+}
+div.SubHeadingComingSoon {
+margin-top: 10px;
+}
+div.ComingSoon {
+  margin: 2px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.ComingSoon:hover {
+  border: 1px solid #777;
+}
+
+div.ComingSoon img {
+  width: 100%;
+  height: auto;
+}
+div.Button {
+    margin-top: 10px;
+    padding: 20px;
+}
+td{
+    border-width: thick;
+    width: 10%;
+}
+
+.move{
+    padding-top: 10px;
+    text-align: center;
+}
+.line{
+    color: white;
+}
+.button2 {
+    color: white;
+    width: 50px;
+    height: 25px;
+    background-color: #5459F3;
+    border: none;
+    padding: 30px 30px;
+    text-align: center;
+    transition: 1s;
+    border-radius: 20px;
+}
+
+</style>
+</head>
+<body>
+<div style="text-align:center;"><h1>Admin Page</h1></div>
+
+
+
+<div class="move">
+<div class="CentreButton">
+<button class= "colors text-light">
     <a asp-action="Create">Create New</a>
-</p>
+    </button>
+
+
+</div>
+
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.MovieImg)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MovieName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ReleaseDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ComingSoon)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Seats)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SeatsTaken)
-            </th>
-            <th></th>
+        <tbody>
+        <thead>
+        <tr class = "text-light">
         </tr>
     </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.MovieImg)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MovieName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReleaseDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ComingSoon)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Seats)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SeatsTaken)
-            </td>
-            <td>
+        <tr class = "NowShowing text-light">
+            <th></th>
+               <hr class = "line">
+            @foreach (var item in Model) {
+                    if (@item.ComingSoon == false)
+                    {
+                        <div class = "NowShowing">
+                <img src="@Html.DisplayFor(modelitem => item.MovieImg)" width="200" height="300">
+                <br>@Html.DisplayFor(modelItem => item.MovieName)
+                <br>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">MoviesDetails</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                        </div>
+                    }
+                }
+            </tr>
+       </tbody>
+</table>
+
+    <div class="SubHeadingComingSoon">
+        <h3>Coming Soon: </h3>
+
+</div>
+<table class="table">
+        <tbody>
+        <thead>
+        <tr class = "text-light">
+        </tr>
+    </thead>
+        <tr class = "NowShowing text-light">
+            <th></th>
+               <hr class = "line">
+            @foreach (var item in Model) {
+                    if (@item.ComingSoon == true)
+                    {
+                        <div class = "NowShowing">
+                <img src="@Html.DisplayFor(modelitem => item.MovieImg)" width="200" height="300">
+                <br>@Html.DisplayFor(modelItem => item.MovieName)
+                <br>@Html.DisplayFor(modelItem => item.ReleaseDate)
+                <br>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
+                        </div>
+                    }
+                }
+            </tr>
+       </tbody>
 </table>
+
+<div class="CentreButton">
+<button class= "colors">
+        <a class="button2" href='https://localhost:44312/Events' alt='Broken Link'>Events</a>
+    </button>
+   
+<button class= "colors">
+        <a class="button2" href='https://localhost:44312/Home/AdminBookings' alt='Broken Link'>Private Bookings</a>
+    </button>
+    </div>
+    </div>
+
+</body>
+<prefooter>
+        <div class="prefooter">
+
+        <p>Our locations: Henderson    Waiheke    Papakura    Albany    Newmarket </p>
+
+         <a class="textcolour" href='https://localhost:44312/Home/AboutUs'>About Us</a> <a class="textcolour" href='https://localhost:44312/Home/Privacy'>Privacy</a> 
+        <br>
+    </div>
+    </prefooter>
+
+<footer>
+        <div class="footer">
+        <a href="https://www.facebook.com/"> <img border="0" alt="FaceBook" src="https://icon-library.com/images/facebook-icon-png-white/facebook-icon-png-white-20.jpg" width="50" height="50"></a>
+        <a href="https://twitter.com/?lang=en"> <img border="0" alt="Twitter" src="https://cambridgebrc.nihr.ac.uk/wp-content/uploads/2020/06/twitter-icon-white-transparent-6.jpg.png" width="50" height="50"></a>
+        <a href="https://www.instagram.com/"> <img border="0" alt="Instagram" src="https://www.logolynx.com/images/logolynx/s_30/304dbd9b624d6051585aac35a3677e9c.png" width="50" height="50"></a>
+    </div>
+    </footer>
