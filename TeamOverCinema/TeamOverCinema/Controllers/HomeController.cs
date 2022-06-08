@@ -98,13 +98,14 @@ namespace TeamOverCinema.Controllers
             return View(events);
         }
         // GET: Movies
-        [Authorize]
+        [Authorize (Roles = "admin")]
         public async Task<IActionResult> Admin()
         {
             return _context.Movies != null ?
                         View(await _context.Movies.ToListAsync()) :
                         Problem("Entity set 'ApplicationDbContext.Movies'  is null.");
         }
+
 
         // GET: Movies/Details/5
         public async Task<IActionResult> MDetails(int? id)
