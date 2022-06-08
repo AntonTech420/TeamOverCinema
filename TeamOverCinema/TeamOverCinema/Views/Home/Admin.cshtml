@@ -1,7 +1,12 @@
-﻿@{
-    ViewData["Title"] = "Admin Page";
+﻿@model IEnumerable<TeamOverCinema.Models.Movies>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h1>@ViewData["Title"]</h1>
+
+
+
 
 <head>
 <style>
@@ -33,11 +38,27 @@ padding: 3px;
 margin-top: 0px;
 margin-bottom: 0px;
 }
+.CentreButton {
+    padding-top: 50px;
+    text-align:center;
+}
+.textcolour
+{
+    color:white;
+
+}
+
+.CentreButton2 {
+    padding-top: 50px;
+    text-align: center;
+}
+
 div.NowShowing {
   margin: 2px;
+  border: 1px solid #ccc;
   float: left;
   width: 180px;
-  border: 1px solid #ccc;
+  float: left;
 }
 
 div.NowShowing:hover {
@@ -46,8 +67,7 @@ div.NowShowing:hover {
 
 div.NowShowing img {
   width: 100%;
-  height: 265px;
-
+  height: auto;
 }
 
 div.desc {
@@ -55,7 +75,7 @@ div.desc {
   text-align: center;
 }
 div.SubHeadingComingSoon {
-margin-top: 400px;
+margin-top: 10px;
 }
 div.ComingSoon {
   margin: 2px;
@@ -73,64 +93,118 @@ div.ComingSoon img {
   height: auto;
 }
 div.Button {
-    margin-top: 400px;
+    margin-top: 10px;
     padding: 20px;
 }
+td{
+    border-width: thick;
+    width: 10%;
+}
+
+.move{
+    padding-top: 10px;
+    text-align: center;
+}
+.line{
+    color: white;
+}
+.button2 {
+    color: white;
+    width: 50px;
+    height: 25px;
+    background-color: #5459F3;
+    border: none;
+    padding: 30px 30px;
+    text-align: center;
+    transition: 1s;
+    border-radius: 20px;
+}
+
 </style>
 </head>
 <body>
+<div style="text-align:center;"><h1>Admin Page</h1></div>
 
-<h3>Admin Page </h3>
 
-<div class="SubHeadingComingSoon">
+
+<div class="move">
+<div class="CentreButton">
+<button class= "colors">
+    <a asp-action="Create">Create New</a>
+    </button>
+
+
+</div>
+
+<table class="table">
+        <tbody>
+        <thead>
+        <tr class = "text-light">
+        </tr>
+    </thead>
+        <tr class = "NowShowing text-light">
+            <th></th>
+               <hr class = "line">
+            @foreach (var item in Model) {
+                    if (@item.ComingSoon == false)
+                    {
+                        <div class = "NowShowing">
+                <img src="@Html.DisplayFor(modelitem => item.MovieImg)" width="200" height="300">
+                <br>@Html.DisplayFor(modelItem => item.MovieName)
+                <br>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">MoviesDetails</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                        </div>
+                    }
+                }
+            </tr>
+       </tbody>
+</table>
+
+    <div class="SubHeadingComingSoon">
         <h3>Coming Soon: </h3>
-</div>
-<div class="ComingSoon">
-  <img src="https://m.media-amazon.com/images/M/MV5BMmIwZDMyYWUtNTU0ZS00ODJhLTg2ZmEtMTk5ZmYzODcxODYxXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg" alt="Top Gun: Maverick" width="600" height="400">
-  <div class="desc">Top Gun: Maverick - Coming Soon</div>
-</div>
 
-<div class="ComingSoon">
-  <img src="https://www.monsterfest.com.au/monsterfest/wp-content/uploads/2022/02/JW3_INT_DIGITAL1SHEET_ARCADIA_BLOCK_TT_AUS.jpg" alt="Jurassic World: Dominion" width="600" height="400">
-  <div class="desc">Jurassic World: Dominion - Coming Soon</div>
 </div>
+<table class="table">
+        <tbody>
+        <thead>
+        <tr class = "text-light">
+        </tr>
+    </thead>
+        <tr class = "NowShowing text-light">
+            <th></th>
+               <hr class = "line">
+            @foreach (var item in Model) {
+                    if (@item.ComingSoon == true)
+                    {
+                        <div class = "NowShowing">
+                <img src="@Html.DisplayFor(modelitem => item.MovieImg)" width="200" height="300">
+                <br>@Html.DisplayFor(modelItem => item.MovieName)
+                <br>@Html.DisplayFor(modelItem => item.ReleaseDate)
+                <br>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                        </div>
+                    }
+                }
+            </tr>
+       </tbody>
+</table>
 
-<div class="ComingSoon">
-  <img src="https://lumiere-a.akamaihd.net/v1/images/p_lightyear_v3_22043_36db91d2.jpeg" alt="Lighjtyear" width="600" height="400">
-  <div class="desc">Lightyear - New Release</div>
-</div>
-
-<div class="ComingSoon">
-  <img src="https://i.etsystatic.com/15810408/r/il/388ec6/2239141293/il_fullxfull.2239141293_bxt1.jpg" alt="Minions: The Rise of Gru" width="600" height="400">
-  <div class="desc">Minions: The Rise of Gru - Coming Soon</div>
-</div>
-
-<div class="ComingSoon">
-  <img src="https://pbs.twimg.com/media/FQzsdTBVkAERLwI?format=jpg&name=medium" alt="Thor: Love and Thunder" width="600" height="400">
-  <div class="desc">Thor: Love and Thunder - Coming Soon</div>
-</div>
-
-<div class="ComingSoon">
-  <img src="https://omg.blog/wp-content/uploads/2022/03/NopePoster.jpg" alt="Nope" width="600" height="400">
-  <div class="desc">Nope - Coming Soon</div>
-</div>
-
-<div class="ComingSoon">
-  <img src="https://media-cache.cinematerial.com/p/500x/3ndccksg/where-the-crawdads-sing-australian-movie-poster.jpg?v=1647962467" alt="Where The Crawdads Sing" width="600" height="400">
-  <div class="desc">Where The Crawdads Sing - Coming Soon</div>
-</div>
-
-<div class="CentreButton2">
-
-<div class="Button">
-    <button>
-        <a href='https://localhost:44312/Home/PrivateCinemaB' alt='Broken Link'>Private bookings</a>
+<div class="CentreButton">
+<button class= "colors">
+        <a class="button2" href='https://localhost:44312/Events' alt='Broken Link'>Events</a>
     </button>
-    <button>
-        <a href='https://localhost:44312/Home/AdminBookings' alt='Broken Link'>Bookings</a>
+   
+<button class= "colors">
+        <a class="button2" href='https://localhost:44312/Home/AdminBookings' alt='Broken Link'>Private Bookings</a>
     </button>
-</div>
+    </div>
+    </div>
 
+</body>
 <prefooter>
         <div class="prefooter">
 
@@ -148,6 +222,3 @@ div.Button {
         <a href="https://www.instagram.com/"> <img border="0" alt="Instagram" src="https://www.logolynx.com/images/logolynx/s_30/304dbd9b624d6051585aac35a3677e9c.png" width="50" height="50"></a>
     </div>
     </footer>
-</body>
-
-

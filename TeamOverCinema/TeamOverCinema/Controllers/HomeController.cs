@@ -3,6 +3,7 @@ using System.Diagnostics;
 using TeamOverCinema.Models;
 using Microsoft.EntityFrameworkCore;
 using TeamOverCinema.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TeamOverCinema.Controllers
 {
@@ -15,12 +16,11 @@ namespace TeamOverCinema.Controllers
         {
             _context = context;
         }
-
-        public IActionResult Admin()
+        public IActionResult Index()
         {
             return View();
         }
-
+        [Authorize]
         public IActionResult AdminSeatSelection()
         {
             return View();
@@ -37,10 +37,12 @@ namespace TeamOverCinema.Controllers
         {
             return View();
         }
+        [Authorize]
         public IActionResult Profile()
         {
             return View();
         }
+        [Authorize]
         public IActionResult AdminBookings()
         {
             return View();
@@ -96,7 +98,8 @@ namespace TeamOverCinema.Controllers
             return View(events);
         }
         // GET: Movies
-        public async Task<IActionResult> Index()
+        [Authorize]
+        public async Task<IActionResult> Admin()
         {
             return _context.Movies != null ?
                         View(await _context.Movies.ToListAsync()) :
