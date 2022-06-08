@@ -33,14 +33,14 @@ namespace TeamOverCinema.Data.Migrations
                     MovieImg = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MovieName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ReleaseDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ComingSoon = table.Column<bool>(type: "bit", nullable: false)
+                    ComingSoon = table.Column<bool>(type: "bit", nullable: false),
+                    Seats = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SeatsTaken = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Movies", x => x.ID);
                 });
-
-           
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -49,7 +49,7 @@ namespace TeamOverCinema.Data.Migrations
                 name: "Events");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "Movies");
         }
     }
 }
