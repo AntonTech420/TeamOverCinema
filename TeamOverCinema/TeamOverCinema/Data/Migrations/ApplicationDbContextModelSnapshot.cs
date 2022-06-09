@@ -269,13 +269,11 @@ namespace TeamOverCinema.Data.Migrations
                     b.Property<string>("ReleaseDate")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Seats")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Seats")
+                        .HasColumnType("int");
 
-                    b.Property<string>("SeatsTaken")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("SeatsTaken")
+                        .HasColumnType("int");
 
                     b.HasKey("ID");
 

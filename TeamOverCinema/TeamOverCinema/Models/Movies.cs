@@ -10,7 +10,7 @@ namespace TeamOverCinema.Models
 		public string? MovieName { get; set; }
 		public string? ReleaseDate { get; set; }
 		public bool ComingSoon { get; set; }
-		public string Seats { get; set; }
-		public string SeatsTaken { get; set; }
+		public int Seats { get; set; }
+		public int SeatsTaken { get; set; }
 	}
 }
