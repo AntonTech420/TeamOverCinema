@@ -200,9 +200,42 @@ slidecenter{
                     if (@item.ComingSoon == false)
                     {
                         <div class = "NowShowing">
-                <img src="@Html.DisplayFor(modelitem => item.MovieImg)" width="200" height="300">
-                <br>@Html.DisplayFor(modelItem => item.MovieName)
+                            <a href="https://localhost:44312/Home/AdminSeatSelection"><img src="@Html.DisplayFor(modelitem => item.MovieImg)" width="600" height="400"></a>
+                            <br><div class="movietextcenter">@Html.DisplayFor(modelItem => item.MovieName)</div>
+
+                            <br>
+
+                        </div>
+
+                    }
+                }
                 <br>
+            </tr>
+       </tbody>
+</table>
+
+    <div class="SubHeadingComingSoon">
+        <h3>Coming Soon: </h3>
+
+</div>
+<table class="table">
+        <tbody>
+        <thead>
+        <tr class = "text-light">
+        </tr>
+    </thead>
+        <tr class = "NowShowing text-light">
+            <th></th>
+               <hr class = "line">
+            @foreach (var item in Model) {
+                    if (@item.ComingSoon == true)
+                    {
+                        <div class = "NowShowing">
+                <img src="@Html.DisplayFor(modelitem => item.MovieImg)" width="200" height="300">
+                <br><div class="movietextcenter2">@Html.DisplayFor(modelItem => item.MovieName)
+                <br>@Html.DisplayFor(modelItem => item.ReleaseDate)</div>
+                <br>
+
                         </div>
                     }
                 }
