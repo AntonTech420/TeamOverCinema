@@ -187,6 +187,29 @@ slidecenter{
     <br>
 <h2 style="text-align: center;, font-weight: bold;">Here are the movies we are currently showing: </h2>
 
+<table class="table">
+        <tbody>
+        <thead>
+        <tr class = "text-light">
+        </tr>
+    </thead>
+        <tr class = "NowShowing text-light">
+            <th></th>
+               <hr class = "line">
+            @foreach (var item in Model) {
+                    if (@item.ComingSoon == false)
+                    {
+                        <div class = "NowShowing">
+                <img src="@Html.DisplayFor(modelitem => item.MovieImg)" width="200" height="300">
+                <br>@Html.DisplayFor(modelItem => item.MovieName)
+                <br>
+                        </div>
+                    }
+                }
+            </tr>
+       </tbody>
+</table>
+
 
 
 <div class="push">
