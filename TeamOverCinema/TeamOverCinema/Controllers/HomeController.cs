@@ -3,6 +3,7 @@ using System.Diagnostics;
 using TeamOverCinema.Models;
 using Microsoft.EntityFrameworkCore;
 using TeamOverCinema.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TeamOverCinema.Controllers
 {
@@ -15,12 +16,6 @@ namespace TeamOverCinema.Controllers
         {
             _context = context;
         }
-
-        public IActionResult Admin()
-        {
-            return View();
-        }
-
         public IActionResult AdminSeatSelection()
         {
             return View();
@@ -37,10 +32,12 @@ namespace TeamOverCinema.Controllers
         {
             return View();
         }
+        [Authorize]
         public IActionResult Profile()
         {
             return View();
         }
+        [Authorize]
         public IActionResult AdminBookings()
         {
             return View();
@@ -96,12 +93,13 @@ namespace TeamOverCinema.Controllers
             return View(events);
         }
         // GET: Movies
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> index()
         {
             return _context.Movies != null ?
                         View(await _context.Movies.ToListAsync()) :
                         Problem("Entity set 'ApplicationDbContext.Movies'  is null.");
         }
+
 
         // GET: Movies/Details/5
         public async Task<IActionResult> MDetails(int? id)

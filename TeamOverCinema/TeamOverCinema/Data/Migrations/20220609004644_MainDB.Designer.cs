@@ -12,7 +12,7 @@ using TeamOverCinema.Data;
 namespace TeamOverCinema.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220531004311_MainDB")]
+    [Migration("20220609004644_MainDB")]
     partial class MainDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -271,37 +271,15 @@ namespace TeamOverCinema.Data.Migrations
                     b.Property<string>("ReleaseDate")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Seats")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SeatsTaken")
+                        .HasColumnType("int");
+
                     b.HasKey("ID");
 
                     b.ToTable("Movies");
-                });
-
-            modelBuilder.Entity("TeamOverCinema.Models.Users", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
-
-                    b.Property<bool>("Admin")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Phone")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

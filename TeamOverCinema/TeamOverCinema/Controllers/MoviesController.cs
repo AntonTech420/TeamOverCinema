@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,7 @@ namespace TeamOverCinema.Controllers
         }
 
         // GET: Movies
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Index()
         {
               return _context.Movies != null ? 
@@ -56,7 +58,7 @@ namespace TeamOverCinema.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,MovieImg,MovieName,ReleaseDate,ComingSoon")] Movies movies)
+        public async Task<IActionResult> Create([Bind("ID,MovieImg,MovieName,ReleaseDate,ComingSoon,Seats,SeatsTaken")] Movies movies)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +90,7 @@ namespace TeamOverCinema.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,MovieImg,MovieName,ReleaseDate,ComingSoon")] Movies movies)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,MovieImg,MovieName,ReleaseDate,ComingSoon,Seats,SeatsTaken")] Movies movies)
         {
             if (id != movies.ID)
             {
