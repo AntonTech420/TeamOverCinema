@@ -16,7 +16,6 @@ namespace TeamOverCinema.Controllers
         {
             _context = context;
         }
-        [Authorize]
         public IActionResult AdminSeatSelection()
         {
             return View();
