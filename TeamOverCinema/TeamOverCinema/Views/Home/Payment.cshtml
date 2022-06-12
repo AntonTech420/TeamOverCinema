@@ -1,0 +1,265 @@
+﻿@model IEnumerable<TeamOverCinema.Models.Events>
+
+@{
+    ViewData["Title"] = "Payment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+  <title>Bootstrap Card</title>
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+
+
+ /*Footer css code*/
+.footer {
+position:static;
+left: 0;
+bottom: 0;
+width: 150%;
+background-color: #262626;
+color: white;
+text-align: center;
+align-content:center;
+margin-left: -325px;
+padding: 3px;
+margin-top: 0px;
+margin-bottom: -100px;
+}
+.prefooter {
+position:static;
+left: 0;
+bottom: 0;
+width: 150%;
+background-color: #161B22;
+color: white;
+text-align: center;
+align-content:center;
+margin-left: -325px;
+padding: 3px;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+
+
+.column {
+    float: left;
+    padding: 0px;
+}
+
+.middle {
+    width: 32%;
+}
+
+.middle2 {
+    width: 50%;
+}
+
+.left2, .right2
+{
+    width: 25%;
+}
+
+.left, .right { /* sets rows on left and right at 28% so they are contained at tht side within the div */
+    width: 100%;
+    background-color: #282f4d; 
+}
+/* Adds style to the card div holing texts and other stuff */
+.card {
+    background-color: #282f4d;
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 15%;
+    width:900px;
+    align-content:center
+}
+.step-content.media-width.active {
+    background-color: #282f4d;
+}
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="text-center">
+        <h1 class="display-4"> Payment</h1>
+         
+        <div class="card">
+            <div class="row">
+                
+                <div class="column left">
+                    <div class="step-content media-width active" data-step="payment" data-step-validate="payment">
+                        <div class="ticket-summary-wrapper init-empty">
+                            <div class="purchase-summary">
+                                <div class="summary-modal-top">
+                                    <a href="#" class="modal-cart edit-cart-close"></a>
+                                    <h3>Booking Summary</h3>
+                                </div>
+                                <div class="summary-modal-body">
+                                    <div class="tickets summary-modal-content">
+                                        <div class="order-items-wrapper">
+                                            <div class="item">
+                                                <span class="description">1x Adult</span>
+                                                <span class="price">$22.00</span>
+                                            </div>
+                                            <div class="item">
+                                                <span class="description">1x Booking Fees </span>
+                                                <span class="price">$1.50</span>
+                                            </div>                                                                                                           
+                                            <div class="item conc" data-id="5927" data-s2sid="" data-conc="{&quot;Tagline&quot;:null,&quot;CineBuzz&quot;:false,&quot;ShowOnComplimentary&quot;:false,&quot;RestrictedTickets&quot;:[],&quot;ExcludedTickets&quot;:[],&quot;MaxTotalSales&quot;:null,&quot;ShowOnTickets&quot;:false,&quot;IncrementOnSeat&quot;:false,&quot;IncrementOnTicket&quot;:false,&quot;CategoryIds&quot;:[3],&quot;ForYou&quot;:false,&quot;Category&quot;:2,&quot;SuggestedConcessionItems&quot;:[],&quot;SuggestedOnly&quot;:false,&quot;ImageUrl&quot;:&quot;https://cdn.eventcinemas.co.nz/cdn/resources/concessionitems_v2/5927.jpg&quot;,&quot;MaxPerTicketLimit&quot;:null,&quot;Comment&quot;:null,&quot;RestrictedDeliveryWindows&quot;:[],&quot;AlcoholUnits&quot;:null,&quot;AttributeIds&quot;:[],&quot;Name&quot;:&quot;Large Double Up Combo&quot;,&quot;Code&quot;:&quot;12629&quot;,&quot;HOCode&quot;:&quot;NZW0026&quot;,&quot;Price&quot;:25.5,&quot;MaxCount&quot;:10,&quot;MinCount&quot;:1,&quot;BookingFee&quot;:0,&quot;SeatQty&quot;:0,&quot;ScreenHelp&quot;:&quot;x2 Large Popcorns and your choice of x2 Large Post Mix Drinks.&quot;,&quot;Featured&quot;:false,&quot;PointsCost&quot;:null,&quot;SoldOut&quot;:false,&quot;PaymentRestrictions&quot;:[],&quot;CreditCardRestrictions&quot;:[],&quot;HideItem&quot;:false,&quot;SortOrder&quot;:9,&quot;TotalItemPrice&quot;:25.5,&quot;IsTeaser&quot;:false,&quot;PackageShortId&quot;:null,&quot;PackageId&quot;:null,&quot;DeviceTypes&quot;:[],&quot;CssStyle&quot;:null,&quot;PriceDesc&quot;:&quot;$25.50&quot;,&quot;Id&quot;:5927,&quot;Quantity&quot;:1,&quot;RecognitionId&quot;:null,&quot;isTop&quot;:true}">
+                                            <span class="description">
+                                                <div class="conc-summary-wrapper is-top">         
+                                                    <div class="conc-summary-name">                                                                
+                                                        <a href="#" class="edit-conc-item" data-s2sid=""></a>                                  
+                                                        <span class="conc-summary-qty">1x </span>                          
+                                                        <span class="conc-summary-name-comment">                 
+                                                            <span>Large Double Up Combo</span>                              
+                                                        </span>         
+                                                    </div>                       
+                                                </div>
+                                            </span>                        
+                                                <div class="conc-price-operator-wrapper">                             
+                                                    <div class="conc-operator-wrapper">                                 
+                                                        <a href="#" class="operator minus"></a>
+                                                        <span class="conc-quantity">1</span>                                 
+                                                        <a href="#" class="operator plus"></a>                             
+                                                    </div>                             
+                                                    <div class="price">$25.50<a href="#" class="edit-conc-item" data-s2sid=""></a><a href="#" class="delete-conc"></a>
+                                                    </div>                         
+                                                </div>                     
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>         
+                                <div class="summary-modal-bottom">             
+                                    <div class="totals-wrapper">                 
+                                        <div class="item total">                     
+                                            <span class="description">Total price</span>                     
+                                            <span class="price">$49.00</span>                 
+                                        </div>                                               
+                                     </div>                         
+                                        <div class="s2s-edit-button-wrapper">                 
+                                            <a href="" class="go-to-step" data-step="s2s">Edit</a>             
+                                        </div>             
+                                        <div class="button-wrapper">                 
+                                            <a href="#" class="btn black proceed">Proceed</a>                 
+                                            <a href="#" class="btn black modal-cart edit-cart-close">Ok</a>             
+                                        </div>         
+                                </div>
+                            </div>
+                        </div>
+                        <div id="payment-wrapper" class="init-empty">
+                            <h3>1. Your details</h3>
+                            <form id="customer-details" novalidate="novalidate">
+                                <span class="sub-title">Your details</span>
+                                <div class="floating-placeholder" data-id="Name" id="FloatingP_Name">
+                                    <div class="input">
+                                        <label>
+                                            <span>Full Name*</span>
+                                            <div id="Name_input">
+                                                <input data-val="true" data-val-requiredunlessdigitalcheckoutvalidator="Name is required" id="Name" name="Name" type="text" value="">
+                                            </div>
+                                        </label>
+                                    </div><span class="field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true">
+                                    </span>
+                                </div>
+                                <div class="floating-placeholder" data-id="Email" id="FloatingP_Email">
+                                    <div class="input">
+                                        <label>
+                                            <span>Email*</span><div id="Email_input">
+                                                <input class="no-spaces" data-val="true" data-val-email="Email Address is not valid" data-val-requiredunlessdigitalcheckoutvalidator="Email Address is not valid" id="Email" name="Email" type="email" value="">
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                                </div>                           
+                            </form>
+                            <h3>2. Terms and Conditions</h3>
+                            <div class="init-empty terms-wrapper">
+                                <div class="small-print">
+                                    <span>Please note a $1.50 booking fee is charged per ticket booked online.</span>
+                                </div>
+                                <br>
+                                <div class="terms">
+                                    <input type="checkbox" id="terms" name="terms" value="terms">
+                                    <label for="vehicle1"> I have read and agree to the Terms & Conditions and the Event Cinemas Privacy Policy</label><br>
+                                    <a target="_blank" href="https://www.eventcinemas.co.nz/Terms">Terms &amp; Conditions</a> and the Event Cinemas
+                                    <a target="_blank" href="https://www.eventcinemas.co.nz/Terms/Privacy">Privacy Policy</a>
+                                </div>
+                            </div>
+                            <br>
+                            <h3>3. Payment </h3>
+                        </div>          
+                    </div>
+                    <form id="customer-details" novalidate="novalidate">
+                        <span class="sub-title">Eftpos</span>
+                        <div class="floating-placeholder" data-id="Name" id="FloatingP_Name">
+                            <div class="input">
+                                <label>
+                                    <span>Card Num</span>
+                                    <div id="Name_input">
+                                        <input data-val="true" data-val-requiredunlessdigitalcheckoutvalidator="Name is required" id="Name" name="Name" type="text" value="">
+                                    </div>
+                                </label>
+                            </div><span class="field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true">
+                            </span>
+                        </div>
+                        <div class="floating-placeholder" data-id="Email" id="FloatingP_Email">
+                            <div class="input">
+                                <label>
+                                    <span>CVV</span>
+                                    <div id="Email_input">
+                                        <span class="field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true">
+                                            <label for="fname"></label>
+                                            <input type="text" id="fname" name="fname">
+                                        </span>
+                                    </div>
+                                </label>
+                            </div>
+                            <br>
+                            <br>
+                            <input type="submit" value="Submit">
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+<prefooter>
+        <div class="prefooter">
+
+        <p>Our locations: Henderson    Waiheke    Papakura    Albany    Newmarket </p>
+
+         <a class="textcolour" href='https://localhost:44312/Home/AboutUs'>About Us</a> <a class="textcolour" href='https://localhost:44312/Home/Privacy'>Privacy</a> 
+        <br>
+    </div>
+    </prefooter>
+
+<footer>
+        <div class="footer">
+        <a href="https://www.facebook.com/"> <img border="0" alt="FaceBook" src="https://icon-library.com/images/facebook-icon-png-white/facebook-icon-png-white-20.jpg" width="50" height="50"></a>
+        <a href="https://twitter.com/?lang=en"> <img border="0" alt="Twitter" src="https://cambridgebrc.nihr.ac.uk/wp-content/uploads/2020/06/twitter-icon-white-transparent-6.jpg.png" width="50" height="50"></a>
+        <a href="https://www.instagram.com/"> <img border="0" alt="Instagram" src="https://www.logolynx.com/images/logolynx/s_30/304dbd9b624d6051585aac35a3677e9c.png" width="50" height="50"></a>
+    </div>
+    </footer>
+</body>
