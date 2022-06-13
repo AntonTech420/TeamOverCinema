@@ -12,7 +12,7 @@ using TeamOverCinema.Data;
 namespace TeamOverCinema.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220609004644_MainDB")]
+    [Migration("20220609215454_MainDB")]
     partial class MainDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
