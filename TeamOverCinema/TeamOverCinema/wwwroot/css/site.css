@@ -172,6 +172,7 @@ body {
 
 .movie-container {
     margin: 20px 0;
+    padding: 5px 400px 5px 400px;
 }
 
     .movie-container select {
@@ -192,7 +193,7 @@ body {
 
 .centre {
     text-align: center;
-    padding-left: 42%;
+    padding-left: 24%;
 }
 .centre2 {
     text-align: center;
@@ -269,8 +270,9 @@ body {
     height: 70px;
     width: 100%;
     margin: 15px 0;
-    transform: rotateX(-45deg);
+    transform: rotateX(-25deg);
     box-shadow: 0 3px 10px rgba(255, 255, 255, 0.75);
+
 }
 
 p.text {
