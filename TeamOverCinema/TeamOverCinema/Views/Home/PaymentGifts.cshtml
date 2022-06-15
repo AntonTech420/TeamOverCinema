@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<TeamOverCinema.Models.Events>
 
 @{
-    ViewData["Title"] = "Payment";
+    ViewData["Title"] = "PaymentGifts";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -92,7 +92,7 @@ margin-bottom: 0px;
 <body>
 
     <div class="text-center">
-        <h1 class="display-4"> Payment</h1>
+        <h1 class="display-4"> Gift Payment</h1>
          
         <div class="card">
             <div class="row">
@@ -103,18 +103,15 @@ margin-bottom: 0px;
                             <div class="purchase-summary">
                                 <div class="summary-modal-top">
                                     <a href="#" class="modal-cart edit-cart-close"></a>
-                                    <h3>Booking Summary</h3>
+                                    <h3>Purchase Summary</h3>
                                 </div>
+                                <br>
                                 <div class="summary-modal-body">
                                     <div class="tickets summary-modal-content">
                                         <div class="order-items-wrapper">
                                             <div class="item">
-                                                <span class="description">1x Adult</span>
-                                                <span class="price">$1.50</span>
-                                            </div>
-                                            <div class="item">
-                                                <span class="description">1x Booking Fees </span>
-                                                <span class="price">$1.50</span>
+                                                <span class="description">1x Gift card</span>
+                                                <span class="price"></span>
                                             </div>
                                             <br>                 
                                             </div>
@@ -124,12 +121,12 @@ margin-bottom: 0px;
                             <div class="summary-modal-bottom">             
                                 <div class="totals-wrapper">                 
                                     <div class="item total">                     
-                                        <span class="description">Total price</span>                     
-                                        <span class="price">$23.50</span>                 
+                                        <span class="description">---</span>                     
+                                        <span class="price">---</span>                 
                                     </div>                                               
                                  </div>          
                                     <div class="button-wrapper">                 
-                                        <a href="#" class="btn Edit">Edit</a>          
+                                        <a href="https://localhost:7036/Home/Gifts" class="btn Edit">Edit</a>          
                                     </div>         
                             </div>
                             </div>
@@ -161,11 +158,12 @@ margin-bottom: 0px;
                                 </div>                           
                             </form>
                             <h3>2. Terms and Conditions</h3>
+                            <br>
                             <div class="init-empty terms-wrapper">
                                 <div class="small-print">
-                                    <span>Please note a $1.50 booking fee is charged per ticket booked online.</span>
+                                    <span>All gift card codes will be sent to given email.</span>
                                 </div>
-                                <br>
+                                
                                 <div class="terms">
                                     <input type="checkbox" id="terms" name="terms" value="terms">
                                     <label for="vehicle1"> I have read and agree to the Terms & Conditions and the OverSight Cinemas Privacy Policy</label><br>
@@ -177,17 +175,9 @@ margin-bottom: 0px;
                         </div>          
                     </div>
                     <form id="customer-details" novalidate="novalidate">
-                        <span class="sub-title">Gift Card</span>
                         <div class="input">
-                        <label>
-                                    <span>Card Number</span>
-                                    <div id="CardNum">
-                                        <label for="Code"></label>
-                                        <input type="text" id="code" name="code">
-                                </div>
-                                </label>
-                        <br>
-                        <br>
+                        
+                        
                         <span class="sub-title">Eftpos</span>
                         
                         <div class="floating-placeholder" data-id="Name" id="FloatingP_Name">
@@ -236,7 +226,6 @@ margin-bottom: 0px;
                 
             </div>
         </div>
-    
     <br>
     <br>
     <br>
@@ -264,6 +253,6 @@ margin-bottom: 0px;
         <a href="https://www.instagram.com/"> <img border="0" alt="Instagram" src="https://www.logolynx.com/images/logolynx/s_30/304dbd9b624d6051585aac35a3677e9c.png" width="50" height="50"></a>
     </div>
     </footer>
-    <script src="~/js/site.js"></script>
+    
 
 </body>
