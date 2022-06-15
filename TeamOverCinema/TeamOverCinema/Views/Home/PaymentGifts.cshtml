@@ -1,0 +1,258 @@
+﻿@model IEnumerable<TeamOverCinema.Models.Events>
+
+@{
+    ViewData["Title"] = "PaymentGifts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+  <title>Bootstrap Card</title>
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+
+
+ /*Footer css code*/
+.footer {
+position:static;
+left: 0;
+bottom: 0;
+width: 150%;
+background-color: #262626;
+color: white;
+text-align: center;
+align-content:center;
+margin-left: -325px;
+padding: 3px;
+margin-top: 0px;
+margin-bottom: -100px;
+}
+.prefooter {
+position:static;
+left: 0;
+bottom: 0;
+width: 150%;
+background-color: #161B22;
+color: white;
+text-align: center;
+align-content:center;
+margin-left: -325px;
+padding: 3px;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+
+
+.column {
+    float: left;
+    padding: 0px;
+}
+
+.middle {
+    width: 32%;
+}
+
+.middle2 {
+    width: 50%;
+}
+
+.left2, .right2
+{
+    width: 25%;
+}
+
+.left, .right { /* sets rows on left and right at 28% so they are contained at tht side within the div */
+    width: 100%;
+    background-color: #282f4d; 
+}
+/* Adds style to the card div holing texts and other stuff */
+.card {
+    background-color: #282f4d;
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 15%;
+    width:900px;
+    align-content:center
+}
+.step-content.media-width.active {
+    background-color: #282f4d;
+}
+
+
+
+    </style>
+</head>
+<script>
+    var Price = sessionStorage.getItem('Price');
+</script>
+
+<body>
+
+    <div class="text-center">
+        <h1 class="display-4"> Gift Payment</h1>
+         
+        <div class="card">
+            <div class="row">
+                
+                <div class="column left">
+                    <div class="step-content media-width active" data-step="payment" data-step-validate="payment">
+                        <div class="ticket-summary-wrapper init-empty">
+                            <div class="purchase-summary">
+                                <div class="summary-modal-top">
+                                    <a href="#" class="modal-cart edit-cart-close"></a>
+                                    <h3>Purchase Summary</h3>
+                                </div>
+                                <br>
+                                <div class="summary-modal-body">
+                                    <div class="tickets summary-modal-content">
+                                        <div class="order-items-wrapper">
+                                            <div class="item">
+                                                <span class="description">1x Gift card</span>
+                                                <span class="price"></span>
+                                            </div>
+                                            <br>                 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>         
+                            <div class="summary-modal-bottom">             
+                                <div class="totals-wrapper">                 
+                                    <div class="item total">                     
+                                        <span class="description">---</span>                     
+                                        <span class="price">---</span>                 
+                                    </div>                                               
+                                 </div>          
+                                    <div class="button-wrapper">                 
+                                        <a href="https://localhost:7036/Home/Gifts" class="btn Edit">Edit</a>          
+                                    </div>         
+                            </div>
+                            </div>
+                        </div>
+                        <div id="payment-wrapper" class="init-empty">
+                            <h3>1. Your details</h3>
+                            <form id="customer-details" novalidate="novalidate">
+                                <span class="sub-title">Your details</span>
+                                <div class="floating-placeholder" data-id="Name" id="FloatingP_Name">
+                                    <div class="input">
+                                        <label>
+                                            <span>Full Name*</span>
+                                            <div id="Name_input">
+                                                <input data-val="true" data-val-requiredunlessdigitalcheckoutvalidator="Name is required" id="Name" name="Name" type="text" value="">
+                                            </div>
+                                        </label>
+                                    </div><span class="field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true">
+                                    </span>
+                                </div>
+                                <div class="floating-placeholder" data-id="Email" id="FloatingP_Email">
+                                    <div class="input">
+                                        <label>
+                                            <span>Email*</span><div id="Email_input">
+                                                <input class="no-spaces" data-val="true" data-val-email="Email Address is not valid" data-val-requiredunlessdigitalcheckoutvalidator="Email Address is not valid" id="Email" name="Email" type="email" value="">
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                                </div>                           
+                            </form>
+                            <h3>2. Terms and Conditions</h3>
+                            <br>
+                            <div class="init-empty terms-wrapper">
+                                <div class="small-print">
+                                    <span>All gift card codes will be sent to given email.</span>
+                                </div>
+                                
+                                <div class="terms">
+                                    <input type="checkbox" id="terms" name="terms" value="terms">
+                                    <label for="vehicle1"> I have read and agree to the Terms & Conditions and the OverSight Cinemas Privacy Policy</label><br>
+                                    <a target="_blank" href="https://localhost:44312/Home/Privacy">Privacy Policy</a>
+                                </div>
+                            </div>
+                            <br>
+                            <h3>3. Payment </h3>
+                        </div>          
+                    </div>
+                    <form id="customer-details" novalidate="novalidate">
+                        <div class="input">
+                        
+                        
+                        <span class="sub-title">Eftpos</span>
+                        
+                        <div class="floating-placeholder" data-id="Name" id="FloatingP_Name">
+                           
+                                
+                                <label>
+                                    <span>Card Num</span>
+                                    <div id="CardNum">
+                                        <label for="CardNum"></label>
+                                        <input type="text" id="CardNum" name="CardNum">
+                                </div>
+                                </label>
+                                
+                            </div>
+                        </div>
+                            <label>
+                                <span>CVV</span>
+                                <div id="CVV">
+                                        <label for="CVV"></label>
+                                        <input type="text" id="CVV" name="CVV">
+                                    
+                                </div>
+                               
+                                <span>Expiry Date</span>
+                                <div id="EDate">
+                                        <label for="EDate"></label>
+                                        <input type="text" id="EDate" name="EDate">
+                                  
+                                </div>
+                            </label>
+                        <br>
+                        <br>
+                        <span class="sub-title">Pay Pal</span>
+                        <br>
+                        <a href="https://www.paypal.com/nz/signin">
+                        <img alt="paypal" src="https://cdn.eventcinemas.co.nz/cdn/content/img/payments/pp_checkout_small.png">
+                        </a>
+                        <br>
+                        <br>
+                        <input type="submit" value="Submit">
+                        <br>
+                        <br>
+                        <br>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+<prefooter>
+        <div class="prefooter">
+
+        <p>Our locations: Henderson    Waiheke    Papakura    Albany    Newmarket </p>
+
+         <a class="textcolour" href='https://localhost:44312/Home/AboutUs'>About Us</a> <a class="textcolour" href='https://localhost:44312/Home/Privacy'>Privacy</a> 
+        <br>
+    </div>
+    </prefooter>
+
+<footer>
+        <div class="footer">
+        <a href="https://www.facebook.com/"> <img border="0" alt="FaceBook" src="https://icon-library.com/images/facebook-icon-png-white/facebook-icon-png-white-20.jpg" width="50" height="50"></a>
+        <a href="https://twitter.com/?lang=en"> <img border="0" alt="Twitter" src="https://cambridgebrc.nihr.ac.uk/wp-content/uploads/2020/06/twitter-icon-white-transparent-6.jpg.png" width="50" height="50"></a>
+        <a href="https://www.instagram.com/"> <img border="0" alt="Instagram" src="https://www.logolynx.com/images/logolynx/s_30/304dbd9b624d6051585aac35a3677e9c.png" width="50" height="50"></a>
+    </div>
+    </footer>
+    
+
+</body>
