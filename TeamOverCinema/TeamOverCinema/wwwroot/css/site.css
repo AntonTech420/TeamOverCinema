@@ -9,7 +9,7 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-    color: #0366d6;
+    color: white;
 }
 
 .control-label, .form-check-label {
@@ -172,6 +172,7 @@ body {
 
 .movie-container {
     margin: 20px 0;
+    padding: 5px 400px 5px 400px;
 }
 
     .movie-container select {
@@ -191,8 +192,10 @@ body {
 }
 
 .centre {
-    text-align: center;
-    padding-left: 42%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
 .centre2 {
     text-align: center;
@@ -203,7 +206,7 @@ body {
 .seat {
     background-color: #444451;
     height: 12px;
-    width: 15px;
+    width: 18px;
     margin: 3px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -214,7 +217,7 @@ body {
     }
 
     .seat.occupied {
-        background-color: #fff;
+        background-color: #242333;
     }
 
     .seat:nth-of-type(2) {
@@ -261,7 +264,10 @@ body {
         }
 
 .row {
-    display: flex;
+    padding 5px 5px 5px 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content
 }
 
 .screen {
@@ -269,8 +275,9 @@ body {
     height: 70px;
     width: 100%;
     margin: 15px 0;
-    transform: rotateX(-45deg);
-    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+    transform: rotateX(-25deg);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.75);
+
 }
 
 p.text {
