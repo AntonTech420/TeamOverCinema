@@ -127,5 +127,9 @@ namespace TeamOverCinema.Controllers
 
             return View(movies);
         }
+        public IActionResult MovieTimes()
+        {
+            return View();
+        }
     }
 }
