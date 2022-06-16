@@ -298,24 +298,13 @@ body {
         }
 
 .row2 {
-    display: flex;
-    font-size: 33px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content
 }
 
 .row {
     display: flex;
-}
-
-<<<<<<< Updated upstream
-.roww {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    width: fit-content
-=======
-.row4 {
-    display: flex;
->>>>>>> Stashed changes
 }
 
 .row3 {
