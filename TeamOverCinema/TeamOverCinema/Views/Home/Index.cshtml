@@ -203,7 +203,7 @@ slidecenter{
                             <a asp-controller="Movies" asp-action="MovieTimes" asp-route-id="@item.ID"><img src="@Html.DisplayFor(modelitem => item.MovieImg)" width="600" height="400"></a>
                             <br><div class="movietextcenter">@Html.DisplayFor(modelItem => item.MovieName)</div>
                             <br>
-                            <a asp-action="MovieDetail" asp-route-id="@item.ID">Trailer</a>
+                            <a href="@item.MovieTrailer">Trailer</a>
                             <br>
 
                         </div>
