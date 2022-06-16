@@ -263,11 +263,15 @@ body {
             margin-left: 2px;
         }
 
-.row {
+.row2 {
     padding 5px 5px 5px 5px;
     margin-left: auto;
     margin-right: auto;
     width: fit-content
+}
+
+.row {
+    display: flex;
 }
 
 .screen {
