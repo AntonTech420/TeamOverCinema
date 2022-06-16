@@ -12,14 +12,14 @@ using TeamOverCinema.Data;
 namespace TeamOverCinema.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220609220104_MainDB")]
+    [Migration("20220616054032_MainDB")]
     partial class MainDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.5")
+                .HasAnnotation("ProductVersion", "6.0.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -268,6 +268,9 @@ namespace TeamOverCinema.Data.Migrations
                     b.Property<string>("MovieName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("MovieTrailer")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ReleaseDate")
                         .HasColumnType("nvarchar(max)");
 
@@ -280,6 +283,25 @@ namespace TeamOverCinema.Data.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Movies");
+                });
+
+            modelBuilder.Entity("TeamOverCinema.Models.MovieTimes", b =>
+                {
+                    b.Property<int>("MovieId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MovieId"), 1L, 1);
+
+                    b.Property<DateTime?>("MovieDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("MovieName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MovieId");
+
+                    b.ToTable("MovieTimes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
