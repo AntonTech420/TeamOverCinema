@@ -12,7 +12,7 @@ using TeamOverCinema.Data;
 namespace TeamOverCinema.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220616054032_MainDB")]
+    [Migration("20220616081240_MainDB")]
     partial class MainDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -283,25 +283,6 @@ namespace TeamOverCinema.Data.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Movies");
-                });
-
-            modelBuilder.Entity("TeamOverCinema.Models.MovieTimes", b =>
-                {
-                    b.Property<int>("MovieId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MovieId"), 1L, 1);
-
-                    b.Property<DateTime?>("MovieDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("MovieName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("MovieId");
-
-                    b.ToTable("MovieTimes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

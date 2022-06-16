@@ -109,7 +109,6 @@ namespace TeamOverCinema.Controllers
                         Problem("Entity set 'ApplicationDbContext.Movies'  is null.");
         }
 
-
         // GET: Movies/Details/5
         public async Task<IActionResult> MDetails(int? id)
         {
@@ -126,10 +125,6 @@ namespace TeamOverCinema.Controllers
             }
 
             return View(movies);
-        }
-        public IActionResult MovieTimes()
-        {
-            return View();
         }
     }
 }

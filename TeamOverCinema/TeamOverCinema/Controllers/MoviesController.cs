@@ -52,6 +52,14 @@ namespace TeamOverCinema.Controllers
 
             return View(movies);
         }
+        public async Task<IActionResult> MovieTimes(int? id)
+        {
+
+            var movies = await _context.Movies
+                .FirstOrDefaultAsync(m => m.ID == id);
+
+            return View(movies);
+        }
 
         // GET: Movies/Create
         public IActionResult Create()

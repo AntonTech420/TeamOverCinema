@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -43,20 +42,6 @@ namespace TeamOverCinema.Data.Migrations
                 {
                     table.PrimaryKey("PK_Movies", x => x.ID);
                 });
-
-            migrationBuilder.CreateTable(
-                name: "MovieTimes",
-                columns: table => new
-                {
-                    MovieId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    MovieName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    MovieDate = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_MovieTimes", x => x.MovieId);
-                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -66,9 +51,6 @@ namespace TeamOverCinema.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Movies");
-
-            migrationBuilder.DropTable(
-                name: "MovieTimes");
         }
     }
 }
