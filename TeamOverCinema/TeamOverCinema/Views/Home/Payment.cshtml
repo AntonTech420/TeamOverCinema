@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TeamOverCinema.Models.Events>
+﻿@model IEnumerable<TeamOverCinema.Models.Movies>
 
 @{
     ViewData["Title"] = "Payment";
@@ -106,19 +106,7 @@ margin-bottom: 0px;
                                     <h3>Booking Summary</h3>
                                 </div>
                                 <div class="summary-modal-body">
-                                    <div class="tickets summary-modal-content">
-                                        <div class="order-items-wrapper">
-                                            <div class="item">
-                                                <span class="description">1x Adult</span>
-                                                <span class="price">$1.50</span>
-                                            </div>
-                                            <div class="item">
-                                                <span class="description">1x Booking Fees </span>
-                                                <span class="price">$1.50</span>
-                                            </div>
-                                            <br>                 
-                                            </div>
-                                        </div>
+
                                     </div>
                                 </div>         
                             <div class="summary-modal-bottom">             
@@ -227,7 +215,7 @@ margin-bottom: 0px;
                         </a>
                         <br>
                         <br>
-                        <input type="submit" value="Submit">
+                        <asp:Button class="btn btn-primary" Text="Submit" OnClick="Button1_Click" />
                         <br>
                         <br>
                         <br>
