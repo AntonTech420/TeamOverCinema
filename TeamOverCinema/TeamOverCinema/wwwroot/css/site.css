@@ -12,6 +12,8 @@ a {
     color: white;
 }
 
+
+
 .control-label, .form-check-label {
     color: #0366d6;
 }
@@ -43,7 +45,37 @@ label {
     text-align: center;
     transition: 0.5s;
     border-radius: 20px;
+
     
+}
+
+.TimesButton2 {
+    background-color: #afafaf;
+    border: none;
+    color: black;
+    padding: 20px;
+    width: 150px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.TimesButton3 {
+    background-color: #242333;
+    border: none;
+    padding: 0px 10px;
+
+}
+
+.TimesButton1 {
+    background-color: #e0dc10;
+    border: none;
+    color: #e0dc10;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.TimesMove{
+    padding-right: 20px;
 }
 /*register button color3*/
 .colors3 {
@@ -117,6 +149,8 @@ html {
 .button3 {
     background-color: #262626;
 }
+
+
 .border-top {
     border-top: 1px solid #e5e5e5;
 }
@@ -264,7 +298,6 @@ body {
         }
 
 .row2 {
-    padding 5px 5px 5px 5px;
     margin-left: auto;
     margin-right: auto;
     width: fit-content
@@ -272,6 +305,12 @@ body {
 
 .row {
     display: flex;
+}
+
+.row3 {
+    display: flex;
+    width:100%;
+    margin-left: 25%;
 }
 
 .screen {
