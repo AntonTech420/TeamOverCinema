@@ -12,7 +12,7 @@ using TeamOverCinema.Data;
 namespace TeamOverCinema.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220616081240_MainDB")]
+    [Migration("20220616083522_MainDB")]
     partial class MainDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -275,6 +275,9 @@ namespace TeamOverCinema.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Seats")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SeatsLeft")
                         .HasColumnType("int");
 
                     b.Property<int>("SeatsTaken")
