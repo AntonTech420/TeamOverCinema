@@ -12,5 +12,7 @@ namespace TeamOverCinema.Models
 		public bool ComingSoon { get; set; }
 		public int Seats { get; set; }
 		public int SeatsTaken { get; set; }
+		public string? MovieTrailer { get; set; }
+
 	}
 }

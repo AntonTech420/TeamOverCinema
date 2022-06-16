@@ -12,7 +12,7 @@ using TeamOverCinema.Data;
 namespace TeamOverCinema.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220616030543_MainDB")]
+    [Migration("20220616054032_MainDB")]
     partial class MainDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -266,6 +266,9 @@ namespace TeamOverCinema.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MovieName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MovieTrailer")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReleaseDate")

@@ -266,6 +266,9 @@ namespace TeamOverCinema.Data.Migrations
                     b.Property<string>("MovieName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("MovieTrailer")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ReleaseDate")
                         .HasColumnType("nvarchar(max)");
 

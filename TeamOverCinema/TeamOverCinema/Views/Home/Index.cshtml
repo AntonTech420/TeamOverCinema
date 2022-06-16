@@ -202,6 +202,7 @@ slidecenter{
                         <div class = "NowShowing">
                             <a href="https://localhost:44312/Home/AdminSeatSelection"><img src="@Html.DisplayFor(modelitem => item.MovieImg)" width="600" height="400"></a>
                             <br><div class="movietextcenter">@Html.DisplayFor(modelItem => item.MovieName)</div>
+                            <a asp-action="Details" asp-route-id="@item.ID">Trailer</a>
 
                             <br>
 
