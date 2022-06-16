@@ -5,7 +5,11 @@
 
 
 const container = document.querySelector('.container');
+<<<<<<< HEAD
 const seats = document.querySelectorAll('.row .seat:not(.occupied)');
+=======
+const seats = document.querySelectorAll('.roww .seat:not(.occupied)');
+>>>>>>> parent of 856d15f (Seats Fix)
 const count = document.getElementById('count');
 const total = document.getElementById('total');
 const movieSelect = document.getElementById('movie');
@@ -22,7 +26,11 @@ function setMovieData(movieIndex, moviePrice) {
 
 // Update total and count
 function updateSelectedCount() {
+<<<<<<< HEAD
     const selectedSeats = document.querySelectorAll('.row .seat.selected');
+=======
+    const selectedSeats = document.querySelectorAll('.roww .seat.selected');
+>>>>>>> parent of 856d15f (Seats Fix)
 
     const seatsIndex = [...selectedSeats].map(seat => [...seats].indexOf(seat));
 
