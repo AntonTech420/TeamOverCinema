@@ -275,6 +275,9 @@ namespace TeamOverCinema.Data.Migrations
                     b.Property<int>("Seats")
                         .HasColumnType("int");
 
+                    b.Property<int>("SeatsLeft")
+                        .HasColumnType("int");
+
                     b.Property<int>("SeatsTaken")
                         .HasColumnType("int");
 

@@ -36,7 +36,8 @@ namespace TeamOverCinema.Data.Migrations
                     ComingSoon = table.Column<bool>(type: "bit", nullable: false),
                     Seats = table.Column<int>(type: "int", nullable: false),
                     SeatsTaken = table.Column<int>(type: "int", nullable: false),
-                    MovieTrailer = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    MovieTrailer = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SeatsLeft = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
