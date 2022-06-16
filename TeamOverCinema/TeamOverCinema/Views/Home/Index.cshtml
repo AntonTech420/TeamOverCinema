@@ -200,11 +200,8 @@ slidecenter{
                     if (@item.ComingSoon == false)
                     {
                         <div class = "NowShowing">
-<<<<<<< Updated upstream
-                            <a href="https://localhost:44312/Home/AdminSeatSelection"><img src="@Html.DisplayFor(modelitem => item.MovieImg)" width="600" height="400"></a>
-=======
+                            <a href="https://localhost:44312/Movies/Seats"><img src="@Html.DisplayFor(modelitem => item.MovieImg)" width="600" height="400"></a>
                             <a asp-controller="Movies" asp-action="Seats" asp-route-id="@item.ID"><img src="@Html.DisplayFor(modelitem => item.MovieImg)" width="600" height="400"></a>
->>>>>>> Stashed changes
                             <br><div class="movietextcenter">@Html.DisplayFor(modelItem => item.MovieName)</div>
                             <br>
                             <a asp-action="MovieDetail" asp-route-id="@item.ID">Trailer</a>
