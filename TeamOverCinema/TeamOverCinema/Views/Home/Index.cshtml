@@ -136,6 +136,12 @@ div.Button {
 
 }
 
+.movietextcenter3{
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+}
+
 slidecenter{
     text-align: center;
     margin-left: 00px;
@@ -185,6 +191,9 @@ slidecenter{
     <br>
     <br>
     <br>
+    <br>
+    <br>
+    <br>
 <h2 style="text-align: center;, font-weight: bold;">Here are the movies we are currently showing: </h2>
 
 <table class="table">
@@ -202,8 +211,9 @@ slidecenter{
                         <div class = "NowShowing">
                             <a asp-controller="Movies" asp-action="MovieTimes" asp-route-id="@item.ID"><img src="@Html.DisplayFor(modelitem => item.MovieImg)" width="600" height="400"></a>
                             <br><div class="movietextcenter">@Html.DisplayFor(modelItem => item.MovieName)</div>
-                            <br>
-                            <a href="@item.MovieTrailer">Trailer</a>
+                            
+                            <div class="movietextcenter3"><a href="@item.MovieTrailer">Trailer</a></div>
+                            
                             <br>
 
                         </div>
