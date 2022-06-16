@@ -13,6 +13,7 @@ namespace TeamOverCinema.Models
 		public int Seats { get; set; }
 		public int SeatsTaken { get; set; }
 		public string? MovieTrailer { get; set; }
-
+		public int SeatsLeft;
 	}
+	
 }

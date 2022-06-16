@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -21,7 +20,6 @@ namespace TeamOverCinema.Controllers
         }
 
         // GET: Movies
-        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Index()
         {
               return _context.Movies != null ? 
@@ -46,6 +44,14 @@ namespace TeamOverCinema.Controllers
 
             return View(movies);
         }
+        public async Task<IActionResult> Seats(int? id)
+        {
+
+            var movies = await _context.Movies
+                .FirstOrDefaultAsync(m => m.ID == id);
+
+            return View(movies);
+        }
 
         // GET: Movies/Create
         public IActionResult Create()
@@ -58,7 +64,7 @@ namespace TeamOverCinema.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,MovieImg,MovieName,ReleaseDate,ComingSoon,Seats,SeatsTaken")] Movies movies)
+        public async Task<IActionResult> Create([Bind("ID,MovieImg,MovieName,ReleaseDate,ComingSoon,Seats,SeatsTaken,MovieTrailer")] Movies movies)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +96,7 @@ namespace TeamOverCinema.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,MovieImg,MovieName,ReleaseDate,ComingSoon,Seats,SeatsTaken")] Movies movies)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,MovieImg,MovieName,ReleaseDate,ComingSoon,Seats,SeatsTaken,MovieTrailer")] Movies movies)
         {
             if (id != movies.ID)
             {
@@ -160,6 +166,10 @@ namespace TeamOverCinema.Controllers
         private bool MoviesExists(int id)
         {
           return (_context.Movies?.Any(e => e.ID == id)).GetValueOrDefault();
+        }
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
