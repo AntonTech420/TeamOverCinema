@@ -314,6 +314,11 @@ body {
     width: fit-content
 }
 
+.row4 {
+    display: flex;
+    font-size: 33px;
+}
+
 .screen {
     background-color: #fff;
     height: 70px;
