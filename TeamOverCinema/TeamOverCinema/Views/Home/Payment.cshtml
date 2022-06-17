@@ -81,8 +81,6 @@ margin-bottom: 0px;
     background-color: #282f4d;
 }
 
-
-
     </style>
 </head>
 <script>
@@ -109,17 +107,6 @@ margin-bottom: 0px;
 
                                     </div>
                                 </div>         
-                            <div class="summary-modal-bottom">             
-                                <div class="totals-wrapper">                 
-                                    <div class="item total">                     
-                                        <span class="description">Total price</span>                     
-                                        <span class="price">$23.50</span>                 
-                                    </div>                                               
-                                 </div>          
-                                    <div class="button-wrapper">                 
-                                        <a href="#" class="btn Edit">Edit</a>          
-                                    </div>         
-                            </div>
                             </div>
                         </div>
                         <div id="payment-wrapper" class="init-empty">
@@ -128,7 +115,7 @@ margin-bottom: 0px;
                                 <span class="sub-title">Your details</span>
                                 <div class="floating-placeholder" data-id="Name" id="FloatingP_Name">
                                     <div class="input">
-                                        <label>
+                                        <label style=" color:white">
                                             <span>Full Name*</span>
                                             <div id="Name_input">
                                                 <input data-val="true" data-val-requiredunlessdigitalcheckoutvalidator="Name is required" id="Name" name="Name" type="text" value="">
@@ -139,7 +126,7 @@ margin-bottom: 0px;
                                 </div>
                                 <div class="floating-placeholder" data-id="Email" id="FloatingP_Email">
                                     <div class="input">
-                                        <label>
+                                        <label style=" color:white">
                                             <span>Email*</span><div id="Email_input">
                                                 <input class="no-spaces" data-val="true" data-val-email="Email Address is not valid" data-val-requiredunlessdigitalcheckoutvalidator="Email Address is not valid" id="Email" name="Email" type="email" value="">
                                             </div>
@@ -150,13 +137,10 @@ margin-bottom: 0px;
                             </form>
                             <h3>2. Terms and Conditions</h3>
                             <div class="init-empty terms-wrapper">
-                                <div class="small-print">
-                                    <span>Please note a $1.50 booking fee is charged per ticket booked online.</span>
-                                </div>
                                 <br>
                                 <div class="terms">
                                     <input type="checkbox" id="terms" name="terms" value="terms">
-                                    <label for="vehicle1"> I have read and agree to the Terms & Conditions and the OverSight Cinemas Privacy Policy</label><br>
+                                    <label for="vehicle1"> I have read and agree OverSight Cinemas Privacy Policy</label><br>
                                     <a target="_blank" href="https://localhost:44312/Home/Privacy">Privacy Policy</a>
                                 </div>
                             </div>
@@ -165,23 +149,15 @@ margin-bottom: 0px;
                         </div>          
                     </div>
                     <form id="customer-details" novalidate="novalidate">
-                        <span class="sub-title">Gift Card</span>
-                        <div class="input">
-                        <label>
-                                    <span>Card Number</span>
-                                    <div id="CardNum">
-                                        <label for="Code"></label>
-                                        <input type="text" id="code" name="code">
-                                </div>
-                                </label>
-                        <br>
+
                         <br>
                         <span class="sub-title">Eftpos</span>
-                        
+                        <br>  
+                        <br>
                         <div class="floating-placeholder" data-id="Name" id="FloatingP_Name">
                            
                                 
-                                <label>
+                                <label style=" color:white">
                                     <span>Card Num</span>
                                     <div id="CardNum">
                                         <label for="CardNum"></label>
@@ -189,9 +165,8 @@ margin-bottom: 0px;
                                 </div>
                                 </label>
                                 
-                            </div>
                         </div>
-                            <label>
+                            <label style=" color:white">
                                 <span>CVV</span>
                                 <div id="CVV">
                                         <label for="CVV"></label>
@@ -213,6 +188,19 @@ margin-bottom: 0px;
                         <a href="https://www.paypal.com/nz/signin">
                         <img alt="paypal" src="https://cdn.eventcinemas.co.nz/cdn/content/img/payments/pp_checkout_small.png">
                         </a>
+                        <br>
+                        <br>
+                        <span class="sub-title">Gift Card</span>
+                        <div class="input">
+                        <label style=" color:white">
+                                    <span>Card Number</span>
+                                    <div id="CardNum">
+                                        <label for="Code"></label>
+                                        <input type="text" id="code" name="code">
+                                </div>
+                                </label>
+                        </div>
+                        <br>
                         <br>
                         <br>
                         <input type="submit" value="Confirm Payment" asp-controller="Home" asp-action="index">
@@ -241,6 +229,7 @@ margin-bottom: 0px;
         <p>Our locations: Henderson    Waiheke    Papakura    Albany    Newmarket </p>
 
          <a class="textcolour" href='https://localhost:44312/Home/AboutUs'>About Us</a> <a class="textcolour" href='https://localhost:44312/Home/Privacy'>Privacy</a> 
+         <p>Contact us at OverSightcinema@gmail.com or call us at 0800 123 456<p>
         <br>
     </div>
     </prefooter>
