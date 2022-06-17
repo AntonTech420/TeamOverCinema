@@ -1,7 +1,7 @@
-﻿@model IEnumerable<TeamOverCinema.Models.Events>
+﻿@model IEnumerable<TeamOverCinema.Models.Movies>
 
 @{
-    ViewData["Title"] = "PaymentGifts";
+    ViewData["Title"] = "Payment";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -81,8 +81,6 @@ margin-bottom: 0px;
     background-color: #282f4d;
 }
 
-
-
     </style>
 </head>
 <script>
@@ -92,7 +90,7 @@ margin-bottom: 0px;
 <body>
 
     <div class="text-center">
-        <h1 class="display-4"> Gift Payment</h1>
+        <h1 class="display-4"> Payment</h1>
          
         <div class="card">
             <div class="row">
@@ -103,32 +101,12 @@ margin-bottom: 0px;
                             <div class="purchase-summary">
                                 <div class="summary-modal-top">
                                     <a href="#" class="modal-cart edit-cart-close"></a>
-                                    <h3>Purchase Summary</h3>
+                                    <h3>Booking Summary</h3>
                                 </div>
-                                <br>
                                 <div class="summary-modal-body">
-                                    <div class="tickets summary-modal-content">
-                                        <div class="order-items-wrapper">
-                                            <div class="item">
-                                                <span class="description">1x Gift card</span>
-                                                <span class="price"></span>
-                                            </div>
-                                            <br>                 
-                                            </div>
-                                        </div>
+
                                     </div>
                                 </div>         
-                            <div class="summary-modal-bottom">             
-                                <div class="totals-wrapper">                 
-                                    <div class="item total">                     
-                                        <span class="description">---</span>                     
-                                        <span class="price">---</span>                 
-                                    </div>                                               
-                                 </div>          
-                                    <div class="button-wrapper">                 
-                                        <a href="https://localhost:7036/Home/Gifts" class="btn Edit">Edit</a>          
-                                    </div>         
-                            </div>
                             </div>
                         </div>
                         <div id="payment-wrapper" class="init-empty">
@@ -137,7 +115,7 @@ margin-bottom: 0px;
                                 <span class="sub-title">Your details</span>
                                 <div class="floating-placeholder" data-id="Name" id="FloatingP_Name">
                                     <div class="input">
-                                        <label>
+                                        <label style=" color:white">
                                             <span>Full Name*</span>
                                             <div id="Name_input">
                                                 <input data-val="true" data-val-requiredunlessdigitalcheckoutvalidator="Name is required" id="Name" name="Name" type="text" value="">
@@ -148,7 +126,7 @@ margin-bottom: 0px;
                                 </div>
                                 <div class="floating-placeholder" data-id="Email" id="FloatingP_Email">
                                     <div class="input">
-                                        <label>
+                                        <label style=" color:white">
                                             <span>Email*</span><div id="Email_input">
                                                 <input class="no-spaces" data-val="true" data-val-email="Email Address is not valid" data-val-requiredunlessdigitalcheckoutvalidator="Email Address is not valid" id="Email" name="Email" type="email" value="">
                                             </div>
@@ -158,15 +136,11 @@ margin-bottom: 0px;
                                 </div>                           
                             </form>
                             <h3>2. Terms and Conditions</h3>
-                            <br>
                             <div class="init-empty terms-wrapper">
-                                <div class="small-print">
-                                    <span>All gift card codes will be sent to given email.</span>
-                                </div>
-                                
+                                <br>
                                 <div class="terms">
                                     <input type="checkbox" id="terms" name="terms" value="terms">
-                                    <label for="vehicle1"> I have read and agree to the Terms & Conditions and the OverSight Cinemas Privacy Policy</label><br>
+                                    <label for="vehicle1"> I have read and agree OverSight Cinemas Privacy Policy</label><br>
                                     <a target="_blank" href="https://localhost:44312/Home/Privacy">Privacy Policy</a>
                                 </div>
                             </div>
@@ -175,15 +149,15 @@ margin-bottom: 0px;
                         </div>          
                     </div>
                     <form id="customer-details" novalidate="novalidate">
-                        <div class="input">
-                        
-                        
+
+                        <br>
                         <span class="sub-title">Eftpos</span>
-                        
+                        <br>  
+                        <br>
                         <div class="floating-placeholder" data-id="Name" id="FloatingP_Name">
                            
                                 
-                                <label>
+                                <label style=" color:white">
                                     <span>Card Num</span>
                                     <div id="CardNum">
                                         <label for="CardNum"></label>
@@ -191,9 +165,8 @@ margin-bottom: 0px;
                                 </div>
                                 </label>
                                 
-                            </div>
                         </div>
-                            <label>
+                            <label style=" color:white">
                                 <span>CVV</span>
                                 <div id="CVV">
                                         <label for="CVV"></label>
@@ -217,7 +190,8 @@ margin-bottom: 0px;
                         </a>
                         <br>
                         <br>
-                        <input type="submit" value="Submit">
+                        <br>
+                        <input type="submit" value="Confirm Payment" asp-controller="Home" asp-action="index">
                         <br>
                         <br>
                         <br>
@@ -226,6 +200,7 @@ margin-bottom: 0px;
                 
             </div>
         </div>
+    
     <br>
     <br>
     <br>
@@ -242,6 +217,7 @@ margin-bottom: 0px;
         <p>Our locations: Henderson    Waiheke    Papakura    Albany    Newmarket </p>
 
          <a class="textcolour" href='https://localhost:44312/Home/AboutUs'>About Us</a> <a class="textcolour" href='https://localhost:44312/Home/Privacy'>Privacy</a> 
+         <p>Contact us at OverSightcinema@gmail.com or call us at 0800 123 456<p>
         <br>
     </div>
     </prefooter>
@@ -253,6 +229,6 @@ margin-bottom: 0px;
         <a href="https://www.instagram.com/"> <img border="0" alt="Instagram" src="https://www.logolynx.com/images/logolynx/s_30/304dbd9b624d6051585aac35a3677e9c.png" width="50" height="50"></a>
     </div>
     </footer>
-    
+    <script src="~/js/site.js"></script>
 
 </body>
