@@ -40,11 +40,18 @@
   <body>
     <div class="movie-container">
       <label>What Membership are you:</label>
-      <select id="movie">
-        <option value="15">Members ($15)</option>
+      @if (User.Identity.IsAuthenticated)
+        {
+            <select id="movie">
+                <option value="15">Members ($15)</option>
+            </select>
+        } else
+        {
+            <select id="movie">
         <option value="20">Non-members ($20)</option>
-      </select>
-    
+            </select>
+        }
+
 
     <ul class="showcase">
       <li>
