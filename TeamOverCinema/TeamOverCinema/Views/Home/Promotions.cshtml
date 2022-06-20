@@ -89,11 +89,14 @@ margin-bottom: 0px;
             <h2 style="text-align: center;">List of deals</h2>
             <div class="row">
               <div class="column left" style="padding-left:24px;">
+                  @if (User.Identity.IsAuthenticated)
+                 {
+                     
 <table class="table">
     <tbody>
+            <P style="text-align: center; font-size: 20px"><b>Events</b></P>
 @foreach (var item in Model) {
         <tr class = "text-light">
-            <P style="text-align: center; font-size: 20px"><b>Events</b></P>
             <td>
                 @Html.DisplayFor(modelItem => item.EventName)
             </td>
@@ -109,8 +112,18 @@ margin-bottom: 0px;
         </tr>
 }
     </tbody>
-</table>
-              </div>
+                </table>
+            } else
+            {
+                <table class="table">
+    <tbody>
+            <P style="text-align: center; font-size: 20px"><b>Events</b></P>
+            <br>
+        <h1 style="text-align: center; font-size: 20px">Events is for Registered users only</h1>
+    </tbody>
+                </table>
+            }
+        </div>
               <div class="column right">
                   <P style="text-align: center; font-size: 20px"><b>Public event holidays will not change</b></P>
                 <P style="text-align: center;">New Years day cinema will open <b>24hrs</b> but prices of movies will be <b>60%</b> cheapear!</P>
@@ -123,7 +136,7 @@ margin-bottom: 0px;
                 <P style="text-align: center;">Mothers day all <b>Mothers</b> will get <b>60%</b> off </P>
                 <P style="text-align: center;">Fathers day all <b>Fathers</b> will get <b>20%</b> off </P>
                 <P style="text-align: center;">Christmas day oversight cinema's will unffortunatley be be closed to allow staff to relax with family and friends.'<b>20%</b> off</P>
-
+                <p style="text-align: center; font-size: 5px;">Only available On-Site</p>
 
               </div>
             </div>
